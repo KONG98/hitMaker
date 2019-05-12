@@ -169,6 +169,4 @@ class SceneSegmt:
         cap.release()
 
 
-if __name__ == '__main__':
-    ss = SceneSegmt()
-    ss.process('input.mp4', './output/', 0.95)
+
