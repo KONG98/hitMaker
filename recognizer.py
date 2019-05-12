@@ -14,6 +14,8 @@ from aip import AipSpeech
 import os
 import subprocess
 
+from infoPipeline import SRT_pipeline
+
 #用作及时关闭多余连接，否则会http连接过多而网络拥塞
 s = requests.session()
 
@@ -66,7 +68,7 @@ def recognizePCM(pcmName_PREFIX):
     else :
         return ""
 
-def getSRT(inputFileName):
+def getSRT_PRE(inputFileName):
 
     #总流程
     print(' *'*20,'识别语音生成字幕开始',' *'*20)
@@ -118,13 +120,17 @@ def getSRT(inputFileName):
     
     #6识别语音并且写入srt
     TimeStamps = [{"Begin":x[0],"End":x[1]} for x in NonSilencePair]
-    GenerateSrtFormatFile(TimeStamps,Lesson_content)
 
+    return SRT_pipeline(TimeStamps,Lesson_content)
+    
 
-    #将tmp文件移走
-    moveFile(name,'./tmp/%s'%name)
+    def getSRT_AFTER(SRT_pipeline):
+        
+        GenerateSrtFormatFile(SRT_pipeline.TimeStamps,SRT_pipeline.Lesson_content)
+        
+        #将tmp文件移走
+        moveFile(name,'./tmp/%s'%name)
 
-    print(' *'*20,'成功生成srt',' *'*20)
-
+        print(' *'*20,'成功生成srt',' *'*20)
 
 
