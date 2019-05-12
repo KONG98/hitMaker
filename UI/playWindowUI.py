@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtMultimedia import *
 from PyQt5 import QtCore
-from playUI import Ui_MainWindow
+from unusable.playUI import Ui_MainWindow
 filedic={}
 
 class myMainWindow(Ui_MainWindow,QMainWindow):

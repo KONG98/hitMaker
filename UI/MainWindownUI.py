@@ -1,7 +1,10 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from vedio import Vedio_Dialog
-from ChangeUI import Change_Dialog
-from cutUI import Cut_Dialog
+from vedio import Ui_vedio
+from changeUI import Ui_change
+from seprateUI import Ui_seg
+from jianjiUID import Ui_jianjiD
+from vlogMake import Ui_vlogmakee
+from zimu import Ui_zimu
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -155,16 +158,34 @@ class Ui_MainWindow(object):
     def changeUI(self):
         self.mainWindow.hide()
         MainDialog = QtWidgets.QDialog() # 创建一个主窗体（必须要有一个主窗体）
-        myDialog = Change_Dialog()  # 创建对话框
+        myDialog = Ui_change()  # 创建对话框
         myDialog.setupUi(MainDialog)
         MainDialog.show()
         MainDialog.exec_()
         self.mainWindow.show()
 
-    def cutUI(self):
+    def seprateUI(self):
+        self.mainWindow.hide()
+        MainDialog = QtWidgets.QDialog()
+        myDialog = Ui_seg()  # 创建对话框
+        myDialog.setupUi(MainDialog)
+        MainDialog.show()
+        MainDialog.exec_()
+        self.mainWindow.show()
+
+    def zimuUI(self):
+        self.mainWindow.hide()
+        MainDialog = QtWidgets.QDialog()
+        myDialog = Ui_zimu()  # 创建对话框
+        myDialog.setupUi(MainDialog)
+        MainDialog.show()
+        MainDialog.exec_()
+        self.mainWindow.show()
+
+    def jianjiUI(self):
         self.mainWindow.hide()
         MainDialog = QtWidgets.QDialog() # 创建一个主窗体（必须要有一个主窗体）
-        myDialog = Cut_Dialog()  # 创建对话框
+        myDialog = Ui_jianjiD()  # 创建对话框
         myDialog.setupUi(MainDialog)
         MainDialog.show()
         MainDialog.exec_()
@@ -173,7 +194,16 @@ class Ui_MainWindow(object):
     def vedioUI(self):
         self.mainWindow.hide()
         MainDialog = QtWidgets.QDialog()  # 创建一个主窗体（必须要有一个主窗体）
-        myDialog = Vedio_Dialog()  # 创建对话框
+        myDialog = Ui_vedio()  # 创建对话框
+        myDialog.setupUi(MainDialog)
+        MainDialog.show()
+        MainDialog.exec_()
+        self.mainWindow.show()
+
+    def vlogmakeUI(self):
+        self.mainWindow.hide()
+        MainDialog = QtWidgets.QDialog()  # 创建一个主窗体（必须要有一个主窗体）
+        myDialog = Ui_vlogmakee()  # 创建对话框
         myDialog.setupUi(MainDialog)
         MainDialog.show()
         MainDialog.exec_()
@@ -199,9 +229,13 @@ class Ui_MainWindow(object):
         self.label_17.setText(_translate("MainWindow", "为视频文件，生成字幕。"))
         self.toolButton_5.setText(_translate("MainWindow", "格式转换"))
         self.label_16.setText(_translate("MainWindow", "视频、音频格式转换。"))
-        self.toolButton_5.clicked.connect(self.changeUI)
+
+        self.toolButton_5.clicked.connect(self.changeUI)#格式转换
         self.toolButton_3.clicked.connect(self.vedioUI)
-        self.toolButton_2.clicked.connect(self.cutUI)
+        self.toolButton.clicked.connect(self.zimuUI)
+        self.toolButton_6.clicked.connect(self.jianjiUI)
+        self.toolButton_7.clicked.connect(self.vlogmakeUI)
+        self.toolButton_2.clicked.connect(self.seprateUI)#s视频分割
 
 
 

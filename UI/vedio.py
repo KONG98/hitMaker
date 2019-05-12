@@ -8,23 +8,23 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-class Vedio_Dialog(object):
-    def setupUi(self, Dialog):
-        Dialog.setObjectName("Dialog")
-        Dialog.resize(400, 300)
-        self.pushButton = QtWidgets.QPushButton(Dialog)
+class Ui_vedio(object):
+    def setupUi(self, vedio):
+        vedio.setObjectName("vedio")
+        vedio.resize(400, 300)
+        self.pushButton = QtWidgets.QPushButton(vedio)
         self.pushButton.setGeometry(QtCore.QRect(40, 30, 311, 91))
         self.pushButton.setObjectName("pushButton")
-        self.pushButton_2 = QtWidgets.QPushButton(Dialog)
+        self.pushButton_2 = QtWidgets.QPushButton(vedio)
         self.pushButton_2.setGeometry(QtCore.QRect(40, 170, 311, 91))
         self.pushButton_2.setObjectName("pushButton_2")
 
-        self.retranslateUi(Dialog)
-        QtCore.QMetaObject.connectSlotsByName(Dialog)
+        self.retranslateUi(vedio)
+        QtCore.QMetaObject.connectSlotsByName(vedio)
 
-    def retranslateUi(self, Dialog):
+    def retranslateUi(self, vedio):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.pushButton.setText(_translate("Dialog", "开始录屏"))
-        self.pushButton_2.setText(_translate("Dialog", "结束录屏"))
+        vedio.setWindowTitle(_translate("vedio", "Dialog"))
+        self.pushButton.setText(_translate("vedio", "开始录屏"))
+        self.pushButton_2.setText(_translate("vedio", "结束录屏"))
 
