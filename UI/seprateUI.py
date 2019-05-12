@@ -6,6 +6,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 
+import scene_segmentation
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import *
@@ -38,6 +39,7 @@ class Ui_seg(object):
         self.pushButton.clicked.connect(self.openVideoFile)
 
         self.retranslateUi(seg)
+        self.buttonBox.clicked.connect(self.btnPress_clicked)
         self.buttonBox.accepted.connect(seg.accept)
         self.buttonBox.rejected.connect(seg.reject)
         QtCore.QMetaObject.connectSlotsByName(seg)
@@ -60,3 +62,7 @@ class Ui_seg(object):
         global filedic
         filedic[filename] = url
 
+    def btnPress_clicked(self):
+        # 以文本的形式输出到多行文本框
+        ss = scene_segmentation.SceneSegmt()
+        ss.process(self.filename, self.filepath, 0.9, 1)
