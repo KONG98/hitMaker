@@ -37,3 +37,16 @@ def renameFile(folderName):
                 dst = '%d.%s'%(index,namec)
                 index+=1
                 os.rename((str(root)+"/"+str(i)),(str(root)+"/"+str(dst)))
+
+def resizeAllImg():
+        import cv2
+        imgs = get_imgFile()
+        y,x = cv2.imread(imgs[0]).shape[0:2]
+        y = int(y/2)
+        x = int (x/2)
+
+        for name in imgs:
+                img = cv2.imread(name)
+                img = cv2.resize(img, (x,y))
+                print(name)
+                cv2.imwrite(name,img,[cv2.IMWRITE_JPEG_QUALITY,30])

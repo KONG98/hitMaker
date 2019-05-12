@@ -1,4 +1,4 @@
-from fileHelper import renameFile
-from fileHelper import get_imgFile
+from fileHelper import *
 
 renameFile('img')
+resizeAllImg()
