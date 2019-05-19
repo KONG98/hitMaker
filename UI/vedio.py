@@ -12,11 +12,14 @@ class Ui_vedio(object):
     def setupUi(self, vedio):
         vedio.setObjectName("vedio")
         vedio.resize(400, 300)
-        self.pushButton = QtWidgets.QPushButton(vedio)
-        self.pushButton.setGeometry(QtCore.QRect(40, 30, 311, 91))
+        self.widget = QtWidgets.QWidget(vedio)
+        self.widget.setGeometry(QtCore.QRect(0, 0, 401, 301))
+        self.widget.setObjectName("widget")
+        self.pushButton = QtWidgets.QPushButton(self.widget)
+        self.pushButton.setGeometry(QtCore.QRect(40, 40, 311, 91))
         self.pushButton.setObjectName("pushButton")
-        self.pushButton_2 = QtWidgets.QPushButton(vedio)
-        self.pushButton_2.setGeometry(QtCore.QRect(40, 170, 311, 91))
+        self.pushButton_2 = QtWidgets.QPushButton(self.widget)
+        self.pushButton_2.setGeometry(QtCore.QRect(40, 150, 311, 91))
         self.pushButton_2.setObjectName("pushButton_2")
 
         self.retranslateUi(vedio)
