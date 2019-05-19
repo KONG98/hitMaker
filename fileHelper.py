@@ -39,7 +39,7 @@ def renameFile(folderName):
                 os.rename((str(root)+"/"+str(i)),(str(root)+"/"+str(dst)))
 
 def resizeAllImg():
-        import cv2
+        from cv2 import cv2 as cv2 
         imgs = get_imgFile()
         y,x = cv2.imread(imgs[0]).shape[0:2]
         y = int(y/2)

@@ -1,6 +1,6 @@
 from PIL import ImageGrab
 import numpy as np
-import cv2
+from cv2 import cv2 as cv2 
 
 def transcribe():
     image = ImageGrab.grab()#获得当前屏幕
