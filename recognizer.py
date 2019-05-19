@@ -76,7 +76,7 @@ def getSRT_PRE(inputFileName):
 
 
     #1：从视频中提取转为wav
-    name = formatChange(inputFileName,'wav')
+    name = formatChange(inputFileName,outPutFileFormat='wav',mode='local')
 
     #2:载入wav文件
     sound = AudioSegment.from_wav(name)
@@ -137,4 +137,3 @@ def getSRT_AFTER(SRT_pipeline):
     LOG.closeLog()
 
 
-getSRT_AFTER(getSRT_PRE('video.mp4'))

@@ -2,18 +2,26 @@ import subprocess
 # -*- coding: utf-8 -*-  
 import os
 
-def formatChange(inputFileName,outPutFileFormat,floder=None):
+def formatChange(inputFileName,outPutFileFormat,floder=None,mode=None):
 
     if not os.path.exists('./afterFormatChange'):
         os.mkdir('./afterFormatChange')
 
-
-    namef,namec = os.path.splitext(inputFileName)
+    inputFileName_pure=''
+    if mode!=None:
+        inputFileName_pure =  inputFileName.split('/')[-1:][0]
+    else:
+        inputFileName_pure = inputFileName
+    
+    namef,namec = os.path.splitext(inputFileName_pure)
+    
 
     if floder ==None:
         outputFileName = './%s.%s'%(namef,outPutFileFormat)
     else:
         outputFileName = './%s/%s.%s'%(floder,namef,outPutFileFormat)
+
+    
 
     cmd = 'ffmpeg -i %s %s'%(inputFileName,outputFileName)
     response = subprocess.call(cmd,shell = True)

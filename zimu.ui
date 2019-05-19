@@ -6,72 +6,68 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1600</width>
-    <height>1400</height>
+    <width>800</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="myVideoWidget" name="wgt_video_2" native="true">
-   <property name="geometry">
-    <rect>
-     <x>300</x>
-     <y>0</y>
-     <width>991</width>
-     <height>1050</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QWidget" name="widget_left" native="true">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>300</width>
-     <height>1400</height>
+     <width>151</width>
+     <height>701</height>
     </rect>
    </property>
+   <widget class="QPushButton" name="add">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>650</y>
+      <width>110</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Agency FB</family>
+      <pointsize>5</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>添加文件</string>
+    </property>
+   </widget>
    <widget class="QListWidget" name="listWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>300</width>
-      <height>1401</height>
+      <width>151</width>
+      <height>651</height>
      </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="add">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>1280</y>
-      <width>171</width>
-      <height>60</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>添加文件</string>
     </property>
    </widget>
   </widget>
   <widget class="QWidget" name="widget_bottom" native="true">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>1150</y>
-     <width>1300</width>
-     <height>251</height>
+     <x>150</x>
+     <y>550</y>
+     <width>651</width>
+     <height>150</height>
     </rect>
    </property>
    <widget class="QTextBrowser" name="textBrowser">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>-1</x>
       <y>0</y>
-      <width>1300</width>
-      <height>261</height>
+      <width>651</width>
+      <height>150</height>
      </rect>
     </property>
     <property name="html">
@@ -87,30 +83,36 @@ p, li { white-space: pre-wrap; }
   <widget class="QWidget" name="widget_right" native="true">
    <property name="geometry">
     <rect>
-     <x>1290</x>
+     <x>650</x>
      <y>0</y>
-     <width>310</width>
-     <height>1151</height>
+     <width>150</width>
+     <height>551</height>
     </rect>
    </property>
    <widget class="QTextEdit" name="textEdit">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>-1</x>
       <y>0</y>
-      <width>310</width>
-      <height>1051</height>
+      <width>151</width>
+      <height>551</height>
      </rect>
     </property>
    </widget>
    <widget class="QPushButton" name="save">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>1070</y>
-      <width>170</width>
-      <height>60</height>
+      <x>20</x>
+      <y>490</y>
+      <width>110</width>
+      <height>40</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Agency FB</family>
+      <pointsize>5</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>保存</string>
@@ -120,19 +122,19 @@ p, li { white-space: pre-wrap; }
   <widget class="QWidget" name="widgetcentral_cen" native="true">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>1050</y>
-     <width>990</width>
-     <height>101</height>
+     <x>150</x>
+     <y>460</y>
+     <width>501</width>
+     <height>91</height>
     </rect>
    </property>
    <widget class="QToolButton" name="play">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>10</y>
-      <width>121</width>
-      <height>81</height>
+      <x>90</x>
+      <y>20</y>
+      <width>91</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="text">
@@ -152,11 +154,17 @@ p, li { white-space: pre-wrap; }
    <widget class="QPushButton" name="start">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>20</y>
-      <width>170</width>
-      <height>60</height>
+      <x>10</x>
+      <y>30</y>
+      <width>81</width>
+      <height>41</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Agency FB</family>
+      <pointsize>5</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>开始生成</string>
@@ -165,10 +173,10 @@ p, li { white-space: pre-wrap; }
    <widget class="QSlider" name="sld_video">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>20</y>
-      <width>571</width>
-      <height>61</height>
+      <x>180</x>
+      <y>30</y>
+      <width>261</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="maximum">
@@ -181,9 +189,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QLabel" name="lab_video">
     <property name="geometry">
      <rect>
-      <x>910</x>
+      <x>460</x>
       <y>30</y>
-      <width>51</width>
+      <width>31</width>
       <height>41</height>
      </rect>
     </property>
@@ -191,6 +199,16 @@ p, li { white-space: pre-wrap; }
      <string>0%</string>
     </property>
    </widget>
+  </widget>
+  <widget class="myVideoWidget" name="wgt_video_2" native="true">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>0</y>
+     <width>501</width>
+     <height>461</height>
+    </rect>
+   </property>
   </widget>
  </widget>
  <customwidgets>

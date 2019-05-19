@@ -11,9 +11,15 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtMultimedia import *
 from PyQt5 import QtCore
 from zimu import Ui_zimu
+from recognizer import getSRT_PRE,getSRT_AFTER
+
+
 global play
 play=1
 filedic={}
+videoNameDic={}
+global currentVideoName
+
 
 class Ui_zimuReal(Ui_zimu,QDialog):
     def __init__(self):
@@ -26,6 +32,7 @@ class Ui_zimuReal(Ui_zimu,QDialog):
         self.play.clicked.connect(self.playVideo)  # play
         self.player.positionChanged.connect(self.changeSlide)  # change Slide
         self.listWidget.itemClicked.connect(self.clickPlayVideo)
+
         qssStyle = '''
 
                 QWidget{
@@ -89,16 +96,24 @@ class Ui_zimuReal(Ui_zimu,QDialog):
         url = QtCore.QUrl(filepath)
         self.listWidget.addItem(filename)
         global filedic
+        global videoNameDic
         filedic[filename] = url
+        videoNameDic[filename] = filepath
 
     def clickPlayVideo(self, item):
-        self.player.setMedia(QMediaContent(filedic[item.text()]))
+        global currentVideoName
+        currentVideoName = item.text()
+        # 改！
+        self.player.setMedia(QMediaContent(filedic[currentVideoName]))
         self.player.play()
         self.player.pause()
 
-    def zimucreat(self, item):
-        self.player.setMedia(QMediaContent(filedic[item.text()]))
-        self.player.play()
+    def zimucreat(self):
+        if currentVideoName:
+            videoName = videoNameDic[currentVideoName]
+            SRT_pipeline = getSRT_PRE(videoName)
+            for i in SRT_pipeline.Lesson_content:
+                self.textEdit.append(i)
 
     def playVideo(self):#1开始播放，2停止播放
         global play
@@ -106,12 +121,12 @@ class Ui_zimuReal(Ui_zimu,QDialog):
             self.player.play()
             play=2
             icon = QtGui.QIcon()
-            icon.addPixmap(QtGui.QPixmap("../../Desktop/stop.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            icon.addPixmap(QtGui.QPixmap("picture/stop.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
             self.play.setIcon(icon)
         elif play==2:
             self.player.pause()
             icon = QtGui.QIcon()
-            icon.addPixmap(QtGui.QPixmap("../../Desktop/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            icon.addPixmap(QtGui.QPixmap("picture/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
             self.play.setIcon(icon)
             play = 1
 

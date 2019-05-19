@@ -13,7 +13,9 @@ class Ui_MainWindow(Ui_MainWindow, QMainWindow):
         super(Ui_MainWindow, self).__init__()
         self.setupUi(self)
 
-        self.toolButton_7.clicked.connect(self.changeUI)  # 格式转换
+        # 暂时修改...我做一些逻辑
+        # self.toolButton_7.clicked.connect(self.changeUI)  # 格式转换
+        self.toolButton_7.clicked.connect(self.zimuUI)
         self.toolButton_4.clicked.connect(self.vedioUI)
         self.toolButton_6.clicked.connect(self.zimuUI)
         self.toolButton_3.clicked.connect(self.jianjiUI)
