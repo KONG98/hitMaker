@@ -20,7 +20,7 @@ def moveFile(srcfile, dstfile):
         shutil.move(srcfile, dstfile)
         print("move %s -> %s" % (srcfile, dstfile))
 
-        moveFile('video.wav', './tmp/video.wav')
+       
 
 
 # 读取目标文件夹的所有文件的文件名
@@ -41,6 +41,13 @@ def renameFile(folderName):
             index += 1
             os.rename((str(root) + "/" + str(i)), (str(root) + "/" + str(dst)))
 
+# 删除目标下的所有文件
+def removeAllFile(folderName):
+    for root, dirs, files in os.walk(folderName):
+        for i in files:
+            namef, namec = os.path.splitext(i)
+            namec = namec[1:]
+            os.remove((str(root) + "/" + str(i)))
 
 def resizeAllImg():
     from cv2 import cv2 as cv2

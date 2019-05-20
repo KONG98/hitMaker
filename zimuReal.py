@@ -115,10 +115,24 @@ class Ui_zimuReal(Ui_zimu, QDialog):
                 videoName = videoNameDic[currentVideoName]
                 SRT_pipeline = getSRT_PRE(videoName)
 
-                for i in SRT_pipeline.Lesson_content:
-                    self.textEdit.append(i)
+                Index = list(range(len(SRT_pipeline.TimeStampList)))
+                count = 0
+                for i in Index:
+                    print(i,'开始')
+                    if((i+1)%3==0):
+                        self.textEdit.append(str(SRT_pipeline.Lesson_content[count]))
+                        count+=1
+                    self.textEdit.append(SRT_pipeline.TimeStampList[i])
+                
+                
+                from fileHelper import removeAllFile
+                removeAllFile('chunks')
+                removeAllFile('tmp')
+
         except NameError as e:
+            print(e, 'NameError')
             return 0
+
 
         
 
