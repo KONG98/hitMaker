@@ -1,4 +1,4 @@
-from cv2 import cv2 as cv2 
+from cv2 import cv2 as cv2
 import operator
 import numpy as np
 import matplotlib.pyplot as plt
@@ -147,4 +147,3 @@ class SceneSegmt:
 if __name__ == '__main__':
     ss = SceneSegmt()
     ss.process('input.mp4', './output/', 0.9, 1)
-

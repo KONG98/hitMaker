@@ -8,6 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -179,4 +180,3 @@ class Ui_MainWindow(object):
         self.label_15.setText(_translate("MainWindow", "为视频、文件生成字幕。"))
         self.toolButton_7.setText(_translate("MainWindow", "格式转换"))
         self.label_17.setText(_translate("MainWindow", "视频、音频格式转换。"))
-

@@ -1,6 +1,8 @@
 from PyQt5.QtWidgets import *
 from vedio import Ui_vedio
-class Ui_vedio(Ui_vedio,QDialog):
+
+
+class Ui_vedio(Ui_vedio, QDialog):
     def __init__(self):
         super(Ui_vedio, self).__init__()
         self.setupUi(self)

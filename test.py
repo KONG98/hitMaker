@@ -1,5 +1,3 @@
 from infoPipeline import *
 
-
-print('123')     
-
+print('123')

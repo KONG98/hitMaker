@@ -6,24 +6,23 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt5 import  QtGui
+from PyQt5 import QtGui
 from PyQt5.QtWidgets import *
 from PyQt5.QtMultimedia import *
 from PyQt5 import QtCore
 from zimu import Ui_zimu
-from recognizer import getSRT_PRE,getSRT_AFTER
-
+from recognizer import getSRT_PRE, getSRT_AFTER
 
 global play
-play=1
-filedic={}
-videoNameDic={}
+play = 1
+filedic = {}
+videoNameDic = {}
 global currentVideoName
 
 
-class Ui_zimuReal(Ui_zimu,QDialog):
+class Ui_zimuReal(Ui_zimu, QDialog):
     def __init__(self):
-        super(Ui_zimu,self).__init__()
+        super(Ui_zimu, self).__init__()
         self.setupUi(self)
         self.player = QMediaPlayer()
         self.player.setVideoOutput(self.wgt_video_2)  # 视频播放输出的widget，就是上面定义的
@@ -89,7 +88,6 @@ class Ui_zimuReal(Ui_zimu,QDialog):
         self.wgt_video_2.setStyleSheet(qssStyle)
         self.widget_right.setStyleSheet(qssStyle)
 
-
     def openVideoFile(self):
         filepath = QFileDialog.getOpenFileName()[0]
         filename = filepath.split('/')[-1:][0]
@@ -115,15 +113,15 @@ class Ui_zimuReal(Ui_zimu,QDialog):
             for i in SRT_pipeline.Lesson_content:
                 self.textEdit.append(i)
 
-    def playVideo(self):#1开始播放，2停止播放
+    def playVideo(self):  # 1开始播放，2停止播放
         global play
-        if play==1:
+        if play == 1:
             self.player.play()
-            play=2
+            play = 2
             icon = QtGui.QIcon()
             icon.addPixmap(QtGui.QPixmap("picture/stop.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
             self.play.setIcon(icon)
-        elif play==2:
+        elif play == 2:
             self.player.pause()
             icon = QtGui.QIcon()
             icon.addPixmap(QtGui.QPixmap("picture/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -134,6 +132,3 @@ class Ui_zimuReal(Ui_zimu,QDialog):
         self.vidoeLength = self.player.duration() + 0.1
         self.sld_video.setValue(round((position / self.vidoeLength) * 100))
         self.lab_video.setText(str(round((position / self.vidoeLength) * 100, 2)) + '%')
-
-
-

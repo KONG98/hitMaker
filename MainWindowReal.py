@@ -1,4 +1,3 @@
-
 from vedioReal import Ui_vedio
 from changeUIreal import Ui_changeReal
 from zimuReal import Ui_zimuReal
@@ -7,6 +6,7 @@ from seprateReal import Ui_seg
 from vlogMakeReal import Ui_vlogmake
 from MainWindow import Ui_MainWindow
 from PyQt5.QtWidgets import QMainWindow
+
 
 class Ui_MainWindow(Ui_MainWindow, QMainWindow):
     def __init__(self):
@@ -50,7 +50,6 @@ class Ui_MainWindow(Ui_MainWindow, QMainWindow):
         self.centralwidget.setStyleSheet(qssStyle)
         self.setStyleSheet(qssStyle)
 
-
     def changeUI(self):
         self.mainWindow.hide()
         myDialog = Ui_changeReal()  # 创建对话框
@@ -72,7 +71,7 @@ class Ui_MainWindow(Ui_MainWindow, QMainWindow):
         myDialog.exec_()
         self.mainWindow.show()
 
-    def jianjiUI(self ):
+    def jianjiUI(self):
         self.mainWindow.hide()
         myDialog = Ui_jianjiDReal()  # 创建对话框
         myDialog.show()
@@ -92,4 +91,3 @@ class Ui_MainWindow(Ui_MainWindow, QMainWindow):
         myDialog.show()
         myDialog.exec_()
         self.mainWindow.show()
-
