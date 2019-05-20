@@ -11,27 +11,6 @@ class SceneSegmt:
         pass
 
     def __smooth(self, x, window_len=13, window='hanning'):
-        """smooth the data using a window with requested size.
-
-        This method is based on the convolution of a scaled window with the signal.
-        The signal is prepared by introducing reflected copies of the signal
-        (with the window size) in both ends so that transient parts are minimized
-        in the begining and end part of the output signal.
-
-        input:
-            x: the input signal
-            window_len: the dimension of the smoothing window
-            window: the type of window from 'flat', 'hanning', 'hamming', 'bartlett', 'blackman'
-                flat window will produce a moving average smoothing.
-        output:
-            the smoothed signal
-
-        example:
-        import numpy as np
-        t = np.linspace(-2,2,0.1)
-        x = np.sin(t)+np.random.randn(len(t))*0.1
-        y = smooth(x)
-        """
         print(len(x), window_len)
 
         s = np.r_[2 * x[0] - x[window_len:1:-1],
@@ -45,10 +24,6 @@ class SceneSegmt:
         return y[window_len - 1:-window_len + 1]
 
     class __Frame:
-        """class to hold information about each frame
-
-        """
-
         def __init__(self, id, diff):
             self.id = id
             self.diff = diff
@@ -169,4 +144,7 @@ class SceneSegmt:
         cap.release()
 
 
+if __name__ == '__main__':
+    ss = SceneSegmt()
+    ss.process('input.mp4', './output/', 0.9, 1)
 
