@@ -19,6 +19,8 @@ play=1
 filedic={}
 videoNameDic={}
 global currentVideoName
+global flag
+flag = 0
 
 
 class Ui_zimuReal(Ui_zimu,QDialog):
@@ -109,11 +111,18 @@ class Ui_zimuReal(Ui_zimu,QDialog):
         self.player.pause()
 
     def zimucreat(self):
-        if currentVideoName:
-            videoName = videoNameDic[currentVideoName]
-            SRT_pipeline = getSRT_PRE(videoName)
-            for i in SRT_pipeline.Lesson_content:
-                self.textEdit.append(i)
+        
+        try:
+            if currentVideoName:
+                videoName = videoNameDic[currentVideoName]
+                SRT_pipeline = getSRT_PRE(videoName)
+
+                for i in SRT_pipeline.Lesson_content:
+                    self.textEdit.append(i)
+        except NameError as e:
+            return 0
+
+        
 
     def playVideo(self):#1开始播放，2停止播放
         global play

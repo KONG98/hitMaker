@@ -11,7 +11,7 @@ class SRT_pipeline:
 class log_pipeline:
 
     def openLog(self):
-        self.f_handler=open('out.log', 'w')
+        self.f_handler=open('out.log', 'w',encoding='utf-8')
         sys.stdout=self.f_handler
     
     def closeLog(self):

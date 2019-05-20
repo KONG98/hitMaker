@@ -8,26 +8,63 @@ from pydub import AudioSegment
 from pydub.silence import split_on_silence
 from fileHelper import moveFile
 
-import requests
+
 from srtMakeHelper import *
-from aip import AipSpeech
+
 import os
 import subprocess
 
 from infoPipeline import *
 
 
-#用作及时关闭多余连接，否则会http连接过多而网络拥塞
-s = requests.session()
+from aip import AipSpeech
 
-
+from DESAdapter import *
 #使用个人使用的百度识别api
-
 APP_ID = '15925422'
 API_KEY = 'j7hGczEvpfdAlRi8CIajUaFE'
 SECRET_KEY = 'TLMjIMceRe16X0flNi1DacPQycEfhyZy'
 
+#用作及时关闭多余连接，否则会http连接过多而网络拥塞
+import requests
+s = requests.session()
 
+
+
+def recognizePCM(pcmName_PREFIX):
+
+    client = AipSpeech(APP_ID, API_KEY, SECRET_KEY)
+
+    #及时关闭多余连接
+    s.keep_alive = False
+    s.mount('https://www.baidu.com',DESAdapter)
+
+    #识别参数必须配置
+    respose = client.asr(get_file_content('./chunks/%s.pcm'%pcmName_PREFIX), 'pcm', 16000, {
+    'dev_pid': 1536,
+    })
+    
+    # respose=''
+    # while True:     #一直循环，知道访问站点成功
+    #     try:
+    #         respose = client.asr(get_file_content('./chunks/%s.pcm'%pcmName_PREFIX), 'pcm', 16000, {
+    #         'dev_pid': 1536,
+    #         })
+    #         break
+    #     except requests.exceptions.ConnectionError:
+    #         print('ConnectionError -- please wait 3 seconds')
+    #         time.sleep(3)
+    #     except requests.exceptions.ChunkedEncodingError:
+    #         print('ChunkedEncodingError -- please wait 3 seconds')
+    #         time.sleep(3)    
+    #     except:
+    #         print('Unfortunitely -- An Unknow Error Happened, Please wait 3 seconds')
+    #         time.sleep(3)
+
+    if 'result' in respose.keys():
+        return (respose['result'][0])
+    else :
+        return ""
 
 def split(chunk,min_silence_len,length_limit,silence_thresh,level = 0):
 
@@ -52,25 +89,10 @@ def wavToPcm(wavName):
     
     subprocess.call(getpcm,shell = True)
 
-def recognizePCM(pcmName_PREFIX):
 
-    client = AipSpeech(APP_ID, API_KEY, SECRET_KEY)
-
-    #及时关闭多余连接
-    s.keep_alive = False
-
-    #识别参数必须配置
-    respose = client.asr(get_file_content('./chunks/%s.pcm'%pcmName_PREFIX), 'pcm', 16000, {
-    'dev_pid': 1536,
-    })
-
-    if 'result' in respose.keys():
-        return (respose['result'][0])
-    else :
-        return ""
 
 def getSRT_PRE(inputFileName):
-    LOG.openLog()
+    # LOG.openLog()
     #总流程
     print(' *'*20,'识别语音生成字幕开始',' *'*20)
 
@@ -123,17 +145,18 @@ def getSRT_PRE(inputFileName):
     TimeStamps = [{"Begin":x[0],"End":x[1]} for x in NonSilencePair]
     #将tmp文件移走
     moveFile(name,'./tmp/%s'%name)
-    LOG.closeLog()
+    # LOG.closeLog()
     return SRT_pipeline(TimeStamps,Lesson_content)
     
     
 
 def getSRT_AFTER(SRT_pipeline):
 
-    LOG.openLog()
+    # LOG.openLog()
     GenerateSrtFormatFile(SRT_pipeline.TimeStamps,SRT_pipeline.Lesson_content)
 
     print(' *'*20,'成功生成srt',' *'*20)
-    LOG.closeLog()
+    # LOG.closeLog()
 
-
+if __name__ =='__main__':
+    getSRT_AFTER(getSRT_PRE('C:/Users/HP/Desktop/code/hitMaker-new/hitMaker/media/video.mp4'))
