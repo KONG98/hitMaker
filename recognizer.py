@@ -19,7 +19,7 @@ from infoPipeline import *
 
 from aip import AipSpeech
 
-from DESAdapter import *
+
 #使用个人使用的百度识别api
 APP_ID = '15925422'
 API_KEY = 'j7hGczEvpfdAlRi8CIajUaFE'
@@ -37,29 +37,13 @@ def recognizePCM(pcmName_PREFIX):
 
     #及时关闭多余连接
     s.keep_alive = False
-    s.mount('https://www.baidu.com',DESAdapter)
 
     #识别参数必须配置
     respose = client.asr(get_file_content('./chunks/%s.pcm'%pcmName_PREFIX), 'pcm', 16000, {
     'dev_pid': 1536,
     })
     
-    # respose=''
-    # while True:     #一直循环，知道访问站点成功
-    #     try:
-    #         respose = client.asr(get_file_content('./chunks/%s.pcm'%pcmName_PREFIX), 'pcm', 16000, {
-    #         'dev_pid': 1536,
-    #         })
-    #         break
-    #     except requests.exceptions.ConnectionError:
-    #         print('ConnectionError -- please wait 3 seconds')
-    #         time.sleep(3)
-    #     except requests.exceptions.ChunkedEncodingError:
-    #         print('ChunkedEncodingError -- please wait 3 seconds')
-    #         time.sleep(3)    
-    #     except:
-    #         print('Unfortunitely -- An Unknow Error Happened, Please wait 3 seconds')
-    #         time.sleep(3)
+
 
     if 'result' in respose.keys():
         return (respose['result'][0])
@@ -143,6 +127,7 @@ def getSRT_PRE(inputFileName):
     
     #6识别语音并且写入srt
     TimeStamps = [{"Begin":x[0],"End":x[1]} for x in NonSilencePair]
+    TimeStamps = TimeStampList_toHMS(TimeStamps)
     #将tmp文件移走
     moveFile(name,'./tmp/%s'%name)
     # LOG.closeLog()

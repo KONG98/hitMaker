@@ -33,11 +33,14 @@ class Ui_zimuReal(Ui_zimu, QDialog):
         self.play.clicked.connect(self.playVideo)  # play
         self.player.positionChanged.connect(self.changeSlide)  # change Slide
         self.listWidget.itemClicked.connect(self.clickPlayVideo)
-
+        self.save.clicked.connect(self.saveSRT)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("picture/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.play.setIcon(icon)
         qssStyle = '''
 
                 QWidget{
-                        border: 1px solid rgb(111, 156, 207);
+                        border: none;
                         background: rgb(232, 241, 252);
                 }
                 QProgressBar{
@@ -85,10 +88,13 @@ class Ui_zimuReal(Ui_zimu, QDialog):
                     }
                                 '''
         self.widget_left.setStyleSheet(qssStyle)
-        self.widget_bottom.setStyleSheet(qssStyle)
+        self.widget.setStyleSheet(qssStyle)
+        self.widget_2.setStyleSheet(qssStyle)
+        self.widget_3.setStyleSheet(qssStyle)
+        self.widget_4.setStyleSheet(qssStyle)
+
         self.widgetcentral_cen.setStyleSheet(qssStyle)
         self.wgt_video_2.setStyleSheet(qssStyle)
-        self.widget_right.setStyleSheet(qssStyle)
 
     def openVideoFile(self):
         filepath = QFileDialog.getOpenFileName()[0]
@@ -115,11 +121,30 @@ class Ui_zimuReal(Ui_zimu, QDialog):
                 videoName = videoNameDic[currentVideoName]
                 SRT_pipeline = getSRT_PRE(videoName)
 
-                for i in SRT_pipeline.Lesson_content:
-                    self.textEdit.append(i)
+                Index = list(range(len(SRT_pipeline.TimeStampList)))
+                count = 0
+                for i in Index:
+                    print(i,'开始')
+                    if((i+1)%3==0):
+                        self.textEdit.append(str(SRT_pipeline.Lesson_content[count]))
+                        count+=1
+                    self.textEdit.append(SRT_pipeline.TimeStampList[i])
+                
+                
+                from fileHelper import removeAllFile
+                removeAllFile('chunks')
+                removeAllFile('tmp')
+
         except NameError as e:
+            print(e, 'NameError')
             return 0
 
+    def saveSRT(self):
+        content = self.textEdit.toPlainText()
+        with open("subtitle.srt", "w", encoding='utf-8') as handle:
+            handle.write(content)
+
+        print('生成字幕subtitle.srt成功')
         
 
     def playVideo(self):  # 1开始播放，2停止播放

@@ -1,11 +1,11 @@
 import sys
 
 class SRT_pipeline:
-    TimeStamps=[]
+    TimeStampList=[]
     Lesson_content=[]
 
-    def __init__(self,TimeStamps,Lesson_content):
-        self.TimeStamps = TimeStamps
+    def __init__(self,TimeStampList,Lesson_content):
+        self.TimeStampList = TimeStampList
         self.Lesson_content = Lesson_content
 
 class log_pipeline:

@@ -9,29 +9,37 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import *
 from PyQt5.QtMultimedia import *
-from PyQt5 import QtCore, QtGui
+from PyQt5 import QtCore,QtGui
 from vlogMake import Ui_vlogmake
-
 global play
-play = 1
-filedic = {}
+global workStationPath
+workStationPath='./'
+play=1
+filedic={}
+from tikTokMaker import static_ImgSeq,static_tkHit_Speed
 
-
-class Ui_vlogmake(Ui_vlogmake, QDialog):
+class Ui_vlogmake(Ui_vlogmake,QDialog):
     def __init__(self):
         super(Ui_vlogmake, self).__init__()
         self.setupUi(self)
         self.player = QMediaPlayer()
         self.player.setVideoOutput(self.wgt_video_2)  # 视频播放输出的widget，就是上面定义的
         self.add.clicked.connect(self.openVideoFile)  # 打开视频文件按钮
+        self.add2.clicked.connect(self.openWorkStation)
         self.play.clicked.connect(self.playVideo)  # play
+        self.start.clicked.connect(self.makeVlog)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("picture/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.play.setIcon(icon)
+
+
         self.player.positionChanged.connect(self.changeSlide)  # change Slide
         self.listWidget.itemClicked.connect(self.clickPlayVideo)
-        self.comboBox.addItems(["model1", "model2"])
+        self.comboBox.addItems(["model1","model2"])
         qssStyle = '''
       
         QWidget{
-                border: 1px solid rgb(111, 156, 207);
+                border: none;
                 background: rgb(232, 241, 252);
         }
         QProgressBar{
@@ -71,24 +79,40 @@ class Ui_vlogmake(Ui_vlogmake, QDialog):
 
             background:rgb(255,255,255);
             }
+            QComboBox{
+             
+            background:rgb(255,255,255);
+            }
                         '''
-        # self.widget_2.setStyleSheet(qssStyle)
+
 
         self.widget_left.setStyleSheet(qssStyle)
+        self.widget.setStyleSheet(qssStyle)
+       # self.setWindowFlag(QtCore.Qt.FramelessWindowHint)  # 隐藏边框
 
-        self.widget_bottom.setStyleSheet(qssStyle)
+
+
+
         self.widgetcentral_cen.setStyleSheet(qssStyle)
         self.wgt_video_2.setStyleSheet(qssStyle)
+
+    def openWorkStation(self):
+        global workStationPath
+        workStationPath = QFileDialog.getExistingDirectory()
+    
+   def makeVlog(self):
+
+        
 
     def openVideoFile(self):
         filepath = QFileDialog.getOpenFileNames()[0]
         for onefilepath in filepath:
-            filename = onefilepath.split('/')[-1:][0]
-            url = QtCore.QUrl(onefilepath)
-            print(url)
-            self.listWidget.addItem(filename)
-            global filedic
-            filedic[filename] = url
+          filename = onefilepath.split('/')[-1:][0]
+          url = QtCore.QUrl(onefilepath)
+          print(url)
+          self.listWidget.addItem(filename)
+          global filedic
+          filedic[filename] = url
 
     def changeSlide(self, position):
         self.vidoeLength = self.player.duration() + 0.1
@@ -101,12 +125,12 @@ class Ui_vlogmake(Ui_vlogmake, QDialog):
             self.player.play()
             play = 2
             icon = QtGui.QIcon()
-            icon.addPixmap(QtGui.QPixmap("../../Desktop/stop.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            icon.addPixmap(QtGui.QPixmap("picture/stop.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
             self.play.setIcon(icon)
         elif play == 2:
             self.player.pause()
             icon = QtGui.QIcon()
-            icon.addPixmap(QtGui.QPixmap("../../Desktop/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            icon.addPixmap(QtGui.QPixmap("picture/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
             self.play.setIcon(icon)
             play = 1
 
