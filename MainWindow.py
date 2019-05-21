@@ -8,7 +8,6 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -34,7 +33,7 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(self.frame)
         self.label_2.setGeometry(QtCore.QRect(0, 0, 840, 630))
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("picture/7.jpg"))
+        self.label_2.setPixmap(QtGui.QPixmap("../../Desktop/7.jpg"))
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(self.frame)
@@ -51,7 +50,7 @@ class Ui_MainWindow(object):
         self.label_4 = QtWidgets.QLabel(self.frame_2)
         self.label_4.setGeometry(QtCore.QRect(0, 0, 390, 340))
         self.label_4.setText("")
-        self.label_4.setPixmap(QtGui.QPixmap("picture//1.jpg"))
+        self.label_4.setPixmap(QtGui.QPixmap("../../Desktop/1.jpg"))
         self.label_4.setScaledContents(True)
         self.label_4.setObjectName("label_4")
         self.label_5 = QtWidgets.QLabel(self.frame_2)
@@ -68,7 +67,7 @@ class Ui_MainWindow(object):
         self.label_6 = QtWidgets.QLabel(self.frame_3)
         self.label_6.setGeometry(QtCore.QRect(0, 0, 460, 240))
         self.label_6.setText("")
-        self.label_6.setPixmap(QtGui.QPixmap("picture//2.jpg"))
+        self.label_6.setPixmap(QtGui.QPixmap("../../Desktop/2.jpg"))
         self.label_6.setScaledContents(True)
         self.label_6.setObjectName("label_6")
         self.label_7 = QtWidgets.QLabel(self.frame_3)
@@ -85,7 +84,7 @@ class Ui_MainWindow(object):
         self.label_8 = QtWidgets.QLabel(self.frame_4)
         self.label_8.setGeometry(QtCore.QRect(0, 0, 250, 170))
         self.label_8.setText("")
-        self.label_8.setPixmap(QtGui.QPixmap("picture/0.jpg"))
+        self.label_8.setPixmap(QtGui.QPixmap("../../Desktop/0.jpg"))
         self.label_8.setScaledContents(True)
         self.label_8.setObjectName("label_8")
         self.label_9 = QtWidgets.QLabel(self.frame_4)
@@ -105,7 +104,7 @@ class Ui_MainWindow(object):
         self.label_11 = QtWidgets.QLabel(self.frame_5)
         self.label_11.setGeometry(QtCore.QRect(0, 0, 250, 170))
         self.label_11.setText("")
-        self.label_11.setPixmap(QtGui.QPixmap("picture/5.jpg"))
+        self.label_11.setPixmap(QtGui.QPixmap("../../Desktop/5.jpg"))
         self.label_11.setScaledContents(True)
         self.label_11.setObjectName("label_11")
         self.label_12 = QtWidgets.QLabel(self.frame_5)
@@ -125,7 +124,7 @@ class Ui_MainWindow(object):
         self.label_14 = QtWidgets.QLabel(self.frame_6)
         self.label_14.setGeometry(QtCore.QRect(0, 0, 460, 340))
         self.label_14.setText("")
-        self.label_14.setPixmap(QtGui.QPixmap("picture//30.jpg"))
+        self.label_14.setPixmap(QtGui.QPixmap("../../Desktop/30.jpg"))
         self.label_14.setScaledContents(True)
         self.label_14.setObjectName("label_14")
         self.label_15 = QtWidgets.QLabel(self.frame_6)
@@ -142,7 +141,7 @@ class Ui_MainWindow(object):
         self.label_16 = QtWidgets.QLabel(self.frame_7)
         self.label_16.setGeometry(QtCore.QRect(0, 0, 460, 270))
         self.label_16.setText("")
-        self.label_16.setPixmap(QtGui.QPixmap("picture//9.jpg"))
+        self.label_16.setPixmap(QtGui.QPixmap("../../Desktop/9.jpg"))
         self.label_16.setScaledContents(True)
         self.label_16.setObjectName("label_16")
         self.label_17 = QtWidgets.QLabel(self.frame_7)
@@ -180,3 +179,4 @@ class Ui_MainWindow(object):
         self.label_15.setText(_translate("MainWindow", "为视频、文件生成字幕。"))
         self.toolButton_7.setText(_translate("MainWindow", "格式转换"))
         self.label_17.setText(_translate("MainWindow", "视频、音频格式转换。"))
+
