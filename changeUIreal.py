@@ -1,8 +1,11 @@
 from PyQt5.QtWidgets import *
 from PyQt5 import QtCore
 from changeUI import Ui_change
-filedic={}
-class Ui_changeReal(Ui_change,QDialog):
+
+filedic = {}
+
+
+class Ui_changeReal(Ui_change, QDialog):
     def __init__(self):
         super(Ui_change, self).__init__()
         self.setupUi(self)
@@ -10,7 +13,7 @@ class Ui_changeReal(Ui_change,QDialog):
         self.add.clicked.connect(self.openVideoFile)
         qssStyle = '''
                         QWidget{
-                border: 1px solid rgb(111, 156, 207);
+                border: none;
                 background: rgb(232, 241, 252);
         }
         QProgressBar{
@@ -45,7 +48,7 @@ class Ui_changeReal(Ui_change,QDialog):
         height: 25px;
         border-radius: 4px;
         border: 1px solid rgb(111, 156, 207);
-        background: rgba(255, 255, 255, 30);
+        background: rgb(255, 255, 255);
 }
 QComboBox:enabled {
         color: rgb(84, 84, 84);
@@ -56,6 +59,7 @@ QComboBox:enabled:hover, QComboBox:enabled:focus {
 }
                         '''
         self.widget.setStyleSheet(qssStyle)
+
     def openVideoFile(self):
         filepath = QFileDialog.getOpenFileName()[0]
         filename = filepath.split('/')[-1:][0]
@@ -63,4 +67,3 @@ QComboBox:enabled:hover, QComboBox:enabled:focus {
         self.listWidget.addItem(filename)
         global filedic
         filedic[filename] = url
-

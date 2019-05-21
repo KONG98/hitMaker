@@ -9,16 +9,18 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import *
 from PyQt5.QtMultimedia import *
-from PyQt5 import QtCore,QtGui
+from PyQt5 import QtCore, QtGui
 from vlogMake import Ui_vlogmake
+
 global play
 global workStationPath
-workStationPath='./'
-play=1
-filedic={}
-from tikTokMaker import static_ImgSeq,static_tkHit_Speed
+workStationPath = './'
+play = 1
+filedic = {}
+from tikTokMaker import static_ImgSeq, static_tkHit_Speed
 
-class Ui_vlogmake(Ui_vlogmake,QDialog):
+
+class Ui_vlogmake(Ui_vlogmake, QDialog):
     def __init__(self):
         super(Ui_vlogmake, self).__init__()
         self.setupUi(self)
@@ -28,10 +30,13 @@ class Ui_vlogmake(Ui_vlogmake,QDialog):
         self.add2.clicked.connect(self.openWorkStation)
         self.play.clicked.connect(self.playVideo)  # play
         self.start.clicked.connect(self.makeVlog)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("picture/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.play.setIcon(icon)
 
         self.player.positionChanged.connect(self.changeSlide)  # change Slide
         self.listWidget.itemClicked.connect(self.clickPlayVideo)
-        self.comboBox.addItems(["model1","model2"])
+        self.comboBox.addItems(["model1", "model2"])
         qssStyle = '''
       
         QWidget{
@@ -81,18 +86,24 @@ class Ui_vlogmake(Ui_vlogmake,QDialog):
             }
                         '''
 
-
         self.widget_left.setStyleSheet(qssStyle)
         self.widget.setStyleSheet(qssStyle)
+<<<<<<< HEAD
        # self.setWindowFlag(QtCore.Qt.FramelessWindowHint)  # 隐藏边框
+=======
+        # self.setWindowFlag(QtCore.Qt.FramelessWindowHint)  # 隐藏边框
+
+>>>>>>> b09cc60b28ec64dd28311fb8c9c37f5f2ca5a88d
         self.widgetcentral_cen.setStyleSheet(qssStyle)
         self.wgt_video_2.setStyleSheet(qssStyle)
 
     def openWorkStation(self):
         global workStationPath
         workStationPath = QFileDialog.getExistingDirectory()
-    
+
+
     def makeVlog(self):
+<<<<<<< HEAD
         model = self.comboBox.currentText()
         from cmdCaller import subprocessCaller
         from fileHelper import removeOneFile
@@ -110,21 +121,27 @@ class Ui_vlogmake(Ui_vlogmake,QDialog):
             filedic[outputFinalName]=url
 
   
+=======
+        pass
+
+>>>>>>> b09cc60b28ec64dd28311fb8c9c37f5f2ca5a88d
 
     def openVideoFile(self):
         filepath = QFileDialog.getOpenFileNames()[0]
         for onefilepath in filepath:
-          filename = onefilepath.split('/')[-1:][0]
-          url = QtCore.QUrl(onefilepath)
-          print(url)
-          self.listWidget.addItem(filename)
-          global filedic
-          filedic[filename] = url
+            filename = onefilepath.split('/')[-1:][0]
+            url = QtCore.QUrl(onefilepath)
+            print(url)
+            self.listWidget.addItem(filename)
+            global filedic
+            filedic[filename] = url
+
 
     def changeSlide(self, position):
         self.vidoeLength = self.player.duration() + 0.1
         self.sld_video.setValue(round((position / self.vidoeLength) * 100))
         self.lab_video.setText(str(round((position / self.vidoeLength) * 100, 2)) + '%')
+
 
     def playVideo(self):  # 1开始播放，2停止播放
         global play
@@ -140,6 +157,7 @@ class Ui_vlogmake(Ui_vlogmake,QDialog):
             icon.addPixmap(QtGui.QPixmap("picture/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
             self.play.setIcon(icon)
             play = 1
+
 
     def clickPlayVideo(self, item):
         self.player.setMedia(QMediaContent(filedic[item.text()]))

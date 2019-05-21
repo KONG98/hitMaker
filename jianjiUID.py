@@ -8,6 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
 class Ui_jianjiD(object):
     def setupUi(self, jianjiD):
         jianjiD.setObjectName("jianjiD")
@@ -86,9 +87,6 @@ class Ui_jianjiD(object):
         self.horizontalLayout.addWidget(self.ok)
         self.play_3 = QtWidgets.QToolButton(self.widgetcentral_cen)
         self.play_3.setMaximumSize(QtCore.QSize(50, 50))
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../../Desktop/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.play_3.setIcon(icon)
         self.play_3.setIconSize(QtCore.QSize(130, 70))
         self.play_3.setObjectName("play_3")
         self.horizontalLayout.addWidget(self.play_3)
@@ -129,7 +127,7 @@ class Ui_jianjiD(object):
         self.sld_video_2.setOrientation(QtCore.Qt.Horizontal)
         self.sld_video_2.setTickPosition(QtWidgets.QSlider.NoTicks)
         self.sld_video_2.setObjectName("sld_video_2")
-        self.gridLayout.addWidget(self.sld_video_2, 1, 1, 1, 2)
+        self.gridLayout.addWidget(self.sld_video_2, 1, 2, 1, 1)
         self.horizontalLayout.addWidget(self.widget)
         self.verticalLayout.addWidget(self.widgetcentral_cen)
         self.textBrowser_3 = QtWidgets.QTextBrowser(self.widget_bottom)
@@ -154,11 +152,13 @@ class Ui_jianjiD(object):
         self.play_3.setText(_translate("jianjiD", "..."))
         self.label.setText(_translate("jianjiD", "from"))
         self.label_3.setText(_translate("jianjiD", "to"))
-        self.textBrowser_3.setHtml(_translate("jianjiD", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Log:</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.textBrowser_3.setHtml(_translate("jianjiD",
+                                              "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                              "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                              "p, li { white-space: pre-wrap; }\n"
+                                              "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+                                              "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Log:</p>\n"
+                                              "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+
 
 from myVideoWidget import myVideoWidget

@@ -8,6 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
 class Ui_zimu(object):
     def setupUi(self, zimu):
         zimu.setObjectName("zimu")
@@ -133,9 +134,6 @@ class Ui_zimu(object):
         self.play.setMinimumSize(QtCore.QSize(30, 30))
         self.play.setMaximumSize(QtCore.QSize(60, 16777215))
         self.play.setBaseSize(QtCore.QSize(0, 0))
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../../Desktop/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.play.setIcon(icon)
         self.play.setIconSize(QtCore.QSize(126, 42))
         self.play.setObjectName("play")
         self.horizontalLayout_3.addWidget(self.play)
@@ -182,6 +180,13 @@ class Ui_zimu(object):
         self.textEdit.setMaximumSize(QtCore.QSize(150, 16777215))
         self.textEdit.setObjectName("textEdit")
         self.verticalLayout_3.addWidget(self.textEdit)
+        self.pushButton = QtWidgets.QPushButton(self.widget_3)
+        self.pushButton.setMinimumSize(QtCore.QSize(0, 30))
+        font = QtGui.QFont()
+        font.setPointSize(7)
+        self.pushButton.setFont(font)
+        self.pushButton.setObjectName("pushButton")
+        self.verticalLayout_3.addWidget(self.pushButton)
         self.save = QtWidgets.QPushButton(self.widget_3)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -224,12 +229,15 @@ class Ui_zimu(object):
         self.start.setText(_translate("zimu", "开始生成"))
         self.play.setText(_translate("zimu", "..."))
         self.lab_video.setText(_translate("zimu", "0%"))
+        self.pushButton.setText(_translate("zimu", "融合"))
         self.save.setText(_translate("zimu", "保存"))
-        self.textBrowser.setHtml(_translate("zimu", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'SimSun\'; font-size:15pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">Log:</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\"><br /></p></body></html>"))
+        self.textBrowser.setHtml(_translate("zimu",
+                                            "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                            "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                            "p, li { white-space: pre-wrap; }\n"
+                                            "</style></head><body style=\" font-family:\'SimSun\'; font-size:15pt; font-weight:400; font-style:normal;\">\n"
+                                            "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">Log:</span></p>\n"
+                                            "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\"><br /></p></body></html>"))
+
 
 from myVideoWidget import myVideoWidget

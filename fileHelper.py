@@ -20,8 +20,6 @@ def moveFile(srcfile, dstfile):
         shutil.move(srcfile, dstfile)
         print("move %s -> %s" % (srcfile, dstfile))
 
-       
-
 
 # 读取目标文件夹的所有文件的文件名
 def get_imgFile(imgFolder):
@@ -41,10 +39,13 @@ def renameFile(folderName):
             index += 1
             os.rename((str(root) + "/" + str(i)), (str(root) + "/" + str(dst)))
 
+<<<<<<< HEAD
 #删除指定文件
 def removeOneFile(fileName):
         os.remove(fileName)
 
+=======
+>>>>>>> b09cc60b28ec64dd28311fb8c9c37f5f2ca5a88d
 
 # 删除目标下的所有文件
 def removeAllFile(folderName):
@@ -53,6 +54,7 @@ def removeAllFile(folderName):
             namef, namec = os.path.splitext(i)
             namec = namec[1:]
             os.remove((str(root) + "/" + str(i)))
+
 
 def resizeAllImg():
     from cv2 import cv2 as cv2

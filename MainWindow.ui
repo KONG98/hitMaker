@@ -1,712 +1,757 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>2380</width>
-    <height>2611</height>
-   </rect>
-  </property>
-  <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-    <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
-   </sizepolicy>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>2380</width>
-    <height>16777215</height>
-   </size>
-  </property>
-  <property name="windowTitle">
-   <string>MainWindow</string>
-  </property>
-  <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_3">
-    <item>
-     <widget class="QLabel" name="label">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <family>华文细黑</family>
-        <pointsize>22</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>欢迎来到我的VLOG</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QWidget" name="widget_3" native="true">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>0</height>
-       </size>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QFrame" name="frame">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::Panel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_4">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QLabel" name="label_2">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>../../Desktop/7.jpg</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QWidget" name="widget_4" native="true">
-            <layout class="QHBoxLayout" name="horizontalLayout_4">
-             <item>
-              <widget class="QLabel" name="label_3">
-               <property name="text">
-                <string>开始自己的VLOG制作之旅，一键获得自己的炫酷VLOG。</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QToolButton" name="toolButton">
-               <property name="text">
-                <string>一键生成</string>
-               </property>
-              </widget>
-             </item>
+    <class>MainWindow</class>
+    <widget class="QMainWindow" name="MainWindow">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>890</width>
+                <height>777</height>
+            </rect>
+        </property>
+        <property name="windowTitle">
+            <string>MainWindow</string>
+        </property>
+        <widget class="QWidget" name="centralwidget">
+            <layout class="QVBoxLayout" name="verticalLayout_10">
+                <item>
+                    <widget class="QLabel" name="label">
+                        <property name="sizePolicy">
+                            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <family>华文细黑</family>
+                                <pointsize>22</pointsize>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>欢迎来到我的VLOG</string>
+                        </property>
+                    </widget>
+                </item>
+                <item>
+                    <widget class="QWidget" name="widget_18" native="true">
+                        <property name="maximumSize">
+                            <size>
+                                <width>16777215</width>
+                                <height>450</height>
+                            </size>
+                        </property>
+                        <layout class="QHBoxLayout" name="horizontalLayout_9">
+                            <property name="leftMargin">
+                                <number>0</number>
+                            </property>
+                            <property name="topMargin">
+                                <number>0</number>
+                            </property>
+                            <property name="rightMargin">
+                                <number>0</number>
+                            </property>
+                            <property name="bottomMargin">
+                                <number>0</number>
+                            </property>
+                            <item>
+                                <widget class="QFrame" name="frame">
+                                    <property name="sizePolicy">
+                                        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                                            <horstretch>0</horstretch>
+                                            <verstretch>0</verstretch>
+                                        </sizepolicy>
+                                    </property>
+                                    <property name="minimumSize">
+                                        <size>
+                                            <width>400</width>
+                                            <height>300</height>
+                                        </size>
+                                    </property>
+                                    <property name="maximumSize">
+                                        <size>
+                                            <width>16777215</width>
+                                            <height>16777215</height>
+                                        </size>
+                                    </property>
+                                    <property name="frameShape">
+                                        <enum>QFrame::Panel</enum>
+                                    </property>
+                                    <property name="frameShadow">
+                                        <enum>QFrame::Raised</enum>
+                                    </property>
+                                    <layout class="QVBoxLayout" name="verticalLayout">
+                                        <property name="leftMargin">
+                                            <number>0</number>
+                                        </property>
+                                        <property name="topMargin">
+                                            <number>0</number>
+                                        </property>
+                                        <property name="rightMargin">
+                                            <number>0</number>
+                                        </property>
+                                        <property name="bottomMargin">
+                                            <number>0</number>
+                                        </property>
+                                        <item>
+                                            <widget class="QLabel" name="label_2">
+                                                <property name="sizePolicy">
+                                                    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                                                        <horstretch>0</horstretch>
+                                                        <verstretch>0</verstretch>
+                                                    </sizepolicy>
+                                                </property>
+                                                <property name="minimumSize">
+                                                    <size>
+                                                        <width>450</width>
+                                                        <height>350</height>
+                                                    </size>
+                                                </property>
+                                                <property name="maximumSize">
+                                                    <size>
+                                                        <width>16777215</width>
+                                                        <height>16777215</height>
+                                                    </size>
+                                                </property>
+                                                <property name="text">
+                                                    <string/>
+                                                </property>
+                                                <property name="pixmap">
+                                                    <pixmap>../../7.jpg</pixmap>
+                                                </property>
+                                                <property name="scaledContents">
+                                                    <bool>true</bool>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item>
+                                            <widget class="QWidget" name="widget" native="true">
+                                                <property name="sizePolicy">
+                                                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                                        <horstretch>0</horstretch>
+                                                        <verstretch>0</verstretch>
+                                                    </sizepolicy>
+                                                </property>
+                                                <layout class="QHBoxLayout" name="horizontalLayout">
+                                                    <item>
+                                                        <widget class="QLabel" name="label_3">
+                                                            <property name="sizePolicy">
+                                                                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                                                    <horstretch>0</horstretch>
+                                                                    <verstretch>0</verstretch>
+                                                                </sizepolicy>
+                                                            </property>
+                                                            <property name="text">
+                                                                <string>开始自己的VLOG制作之旅，一键获得自己的炫酷VLOG。</string>
+                                                            </property>
+                                                        </widget>
+                                                    </item>
+                                                    <item>
+                                                        <widget class="QToolButton" name="toolButton">
+                                                            <property name="text">
+                                                                <string>一键生成</string>
+                                                            </property>
+                                                        </widget>
+                                                    </item>
+                                                </layout>
+                                            </widget>
+                                        </item>
+                                    </layout>
+                                </widget>
+                            </item>
+                            <item>
+                                <widget class="QWidget" name="widget_17" native="true">
+                                    <property name="maximumSize">
+                                        <size>
+                                            <width>256</width>
+                                            <height>16777215</height>
+                                        </size>
+                                    </property>
+                                    <layout class="QVBoxLayout" name="verticalLayout_9">
+                                        <property name="leftMargin">
+                                            <number>0</number>
+                                        </property>
+                                        <property name="topMargin">
+                                            <number>0</number>
+                                        </property>
+                                        <property name="rightMargin">
+                                            <number>0</number>
+                                        </property>
+                                        <property name="bottomMargin">
+                                            <number>0</number>
+                                        </property>
+                                        <item>
+                                            <widget class="QFrame" name="frame_3">
+                                                <property name="frameShape">
+                                                    <enum>QFrame::Panel</enum>
+                                                </property>
+                                                <property name="frameShadow">
+                                                    <enum>QFrame::Raised</enum>
+                                                </property>
+                                                <layout class="QVBoxLayout" name="verticalLayout_2">
+                                                    <property name="leftMargin">
+                                                        <number>0</number>
+                                                    </property>
+                                                    <property name="topMargin">
+                                                        <number>0</number>
+                                                    </property>
+                                                    <property name="rightMargin">
+                                                        <number>0</number>
+                                                    </property>
+                                                    <property name="bottomMargin">
+                                                        <number>0</number>
+                                                    </property>
+                                                    <item>
+                                                        <widget class="QLabel" name="label_4">
+                                                            <property name="maximumSize">
+                                                                <size>
+                                                                    <width>400</width>
+                                                                    <height>175</height>
+                                                                </size>
+                                                            </property>
+                                                            <property name="text">
+                                                                <string/>
+                                                            </property>
+                                                            <property name="pixmap">
+                                                                <pixmap>../../2.jpg</pixmap>
+                                                            </property>
+                                                            <property name="scaledContents">
+                                                                <bool>true</bool>
+                                                            </property>
+                                                        </widget>
+                                                    </item>
+                                                    <item>
+                                                        <widget class="QWidget" name="widget_3" native="true">
+                                                            <property name="sizePolicy">
+                                                                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                                                    <horstretch>0</horstretch>
+                                                                    <verstretch>0</verstretch>
+                                                                </sizepolicy>
+                                                            </property>
+                                                            <layout class="QHBoxLayout" name="horizontalLayout_2">
+                                                                <property name="leftMargin">
+                                                                    <number>5</number>
+                                                                </property>
+                                                                <property name="rightMargin">
+                                                                    <number>5</number>
+                                                                </property>
+                                                                <item>
+                                                                    <widget class="QLabel" name="label_7">
+                                                                        <property name="text">
+                                                                            <string>输入起点和终点，剪辑。</string>
+                                                                        </property>
+                                                                    </widget>
+                                                                </item>
+                                                                <item>
+                                                                    <widget class="QToolButton" name="toolButton_3">
+                                                                        <property name="text">
+                                                                            <string>视频剪辑</string>
+                                                                        </property>
+                                                                    </widget>
+                                                                </item>
+                                                            </layout>
+                                                        </widget>
+                                                    </item>
+                                                </layout>
+                                            </widget>
+                                        </item>
+                                        <item>
+                                            <widget class="QFrame" name="frame_7">
+                                                <property name="frameShape">
+                                                    <enum>QFrame::Panel</enum>
+                                                </property>
+                                                <property name="frameShadow">
+                                                    <enum>QFrame::Raised</enum>
+                                                </property>
+                                                <layout class="QVBoxLayout" name="verticalLayout_3">
+                                                    <property name="leftMargin">
+                                                        <number>0</number>
+                                                    </property>
+                                                    <property name="topMargin">
+                                                        <number>0</number>
+                                                    </property>
+                                                    <property name="rightMargin">
+                                                        <number>0</number>
+                                                    </property>
+                                                    <property name="bottomMargin">
+                                                        <number>0</number>
+                                                    </property>
+                                                    <item>
+                                                        <widget class="QLabel" name="label_6">
+                                                            <property name="maximumSize">
+                                                                <size>
+                                                                    <width>400</width>
+                                                                    <height>175</height>
+                                                                </size>
+                                                            </property>
+                                                            <property name="text">
+                                                                <string/>
+                                                            </property>
+                                                            <property name="pixmap">
+                                                                <pixmap>../../9.jpg</pixmap>
+                                                            </property>
+                                                            <property name="scaledContents">
+                                                                <bool>true</bool>
+                                                            </property>
+                                                        </widget>
+                                                    </item>
+                                                    <item>
+                                                        <widget class="QWidget" name="widget_5" native="true">
+                                                            <property name="sizePolicy">
+                                                                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                                                    <horstretch>0</horstretch>
+                                                                    <verstretch>0</verstretch>
+                                                                </sizepolicy>
+                                                            </property>
+                                                            <layout class="QHBoxLayout" name="horizontalLayout_3">
+                                                                <property name="leftMargin">
+                                                                    <number>5</number>
+                                                                </property>
+                                                                <property name="rightMargin">
+                                                                    <number>5</number>
+                                                                </property>
+                                                                <item>
+                                                                    <widget class="QLabel" name="label_17">
+                                                                        <property name="text">
+                                                                            <string>视频、音频格式转换。</string>
+                                                                        </property>
+                                                                    </widget>
+                                                                </item>
+                                                                <item>
+                                                                    <widget class="QToolButton" name="toolButton_7">
+                                                                        <property name="text">
+                                                                            <string>格式转换</string>
+                                                                        </property>
+                                                                    </widget>
+                                                                </item>
+                                                            </layout>
+                                                        </widget>
+                                                    </item>
+                                                </layout>
+                                            </widget>
+                                        </item>
+                                    </layout>
+                                </widget>
+                            </item>
+                        </layout>
+                    </widget>
+                </item>
+                <item>
+                    <widget class="QWidget" name="widget_16" native="true">
+                        <property name="maximumSize">
+                            <size>
+                                <width>16777215</width>
+                                <height>200</height>
+                            </size>
+                        </property>
+                        <layout class="QHBoxLayout" name="horizontalLayout_8">
+                            <property name="leftMargin">
+                                <number>0</number>
+                            </property>
+                            <property name="topMargin">
+                                <number>0</number>
+                            </property>
+                            <property name="rightMargin">
+                                <number>0</number>
+                            </property>
+                            <item>
+                                <widget class="QWidget" name="widget_15" native="true">
+                                    <layout class="QVBoxLayout" name="verticalLayout_8">
+                                        <property name="leftMargin">
+                                            <number>0</number>
+                                        </property>
+                                        <property name="topMargin">
+                                            <number>0</number>
+                                        </property>
+                                        <property name="rightMargin">
+                                            <number>0</number>
+                                        </property>
+                                        <property name="bottomMargin">
+                                            <number>0</number>
+                                        </property>
+                                        <item>
+                                            <widget class="QFrame" name="frame_5">
+                                                <property name="frameShape">
+                                                    <enum>QFrame::Panel</enum>
+                                                </property>
+                                                <property name="frameShadow">
+                                                    <enum>QFrame::Raised</enum>
+                                                </property>
+                                                <layout class="QHBoxLayout" name="horizontalLayout_5">
+                                                    <property name="leftMargin">
+                                                        <number>0</number>
+                                                    </property>
+                                                    <property name="topMargin">
+                                                        <number>0</number>
+                                                    </property>
+                                                    <property name="rightMargin">
+                                                        <number>0</number>
+                                                    </property>
+                                                    <property name="bottomMargin">
+                                                        <number>0</number>
+                                                    </property>
+                                                    <item>
+                                                        <widget class="QLabel" name="label_14">
+                                                            <property name="maximumSize">
+                                                                <size>
+                                                                    <width>192</width>
+                                                                    <height>200</height>
+                                                                </size>
+                                                            </property>
+                                                            <property name="text">
+                                                                <string/>
+                                                            </property>
+                                                            <property name="pixmap">
+                                                                <pixmap>../../0.jpg</pixmap>
+                                                            </property>
+                                                            <property name="scaledContents">
+                                                                <bool>true</bool>
+                                                            </property>
+                                                        </widget>
+                                                    </item>
+                                                    <item>
+                                                        <widget class="QWidget" name="widget_9" native="true">
+                                                            <property name="sizePolicy">
+                                                                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                                                                    <horstretch>0</horstretch>
+                                                                    <verstretch>0</verstretch>
+                                                                </sizepolicy>
+                                                            </property>
+                                                            <layout class="QVBoxLayout" name="verticalLayout_5">
+                                                                <property name="topMargin">
+                                                                    <number>0</number>
+                                                                </property>
+                                                                <property name="bottomMargin">
+                                                                    <number>9</number>
+                                                                </property>
+                                                                <item>
+                                                                    <widget class="QLabel" name="label_13">
+                                                                        <property name="text">
+                                                                            <string>一个按钮</string>
+                                                                        </property>
+                                                                    </widget>
+                                                                </item>
+                                                                <item>
+                                                                    <widget class="QLabel" name="label_12">
+                                                                        <property name="text">
+                                                                            <string>图片格式化</string>
+                                                                        </property>
+                                                                    </widget>
+                                                                </item>
+                                                                <item>
+                                                                    <widget class="QToolButton" name="toolButton_5">
+                                                                        <property name="text">
+                                                                            <string>一键改变</string>
+                                                                        </property>
+                                                                    </widget>
+                                                                </item>
+                                                            </layout>
+                                                        </widget>
+                                                    </item>
+                                                </layout>
+                                            </widget>
+                                        </item>
+                                        <item>
+                                            <widget class="QFrame" name="frame_4">
+                                                <property name="frameShape">
+                                                    <enum>QFrame::Panel</enum>
+                                                </property>
+                                                <property name="frameShadow">
+                                                    <enum>QFrame::Raised</enum>
+                                                </property>
+                                                <layout class="QHBoxLayout" name="horizontalLayout_4">
+                                                    <property name="leftMargin">
+                                                        <number>0</number>
+                                                    </property>
+                                                    <property name="topMargin">
+                                                        <number>0</number>
+                                                    </property>
+                                                    <property name="rightMargin">
+                                                        <number>0</number>
+                                                    </property>
+                                                    <property name="bottomMargin">
+                                                        <number>0</number>
+                                                    </property>
+                                                    <item>
+                                                        <widget class="QLabel" name="label_16">
+                                                            <property name="sizePolicy">
+                                                                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                                                                    <horstretch>0</horstretch>
+                                                                    <verstretch>0</verstretch>
+                                                                </sizepolicy>
+                                                            </property>
+                                                            <property name="maximumSize">
+                                                                <size>
+                                                                    <width>179</width>
+                                                                    <height>200</height>
+                                                                </size>
+                                                            </property>
+                                                            <property name="text">
+                                                                <string/>
+                                                            </property>
+                                                            <property name="pixmap">
+                                                                <pixmap>../../5.jpg</pixmap>
+                                                            </property>
+                                                            <property name="scaledContents">
+                                                                <bool>true</bool>
+                                                            </property>
+                                                        </widget>
+                                                    </item>
+                                                    <item>
+                                                        <widget class="QWidget" name="widget_7" native="true">
+                                                            <property name="sizePolicy">
+                                                                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                                                                    <horstretch>0</horstretch>
+                                                                    <verstretch>0</verstretch>
+                                                                </sizepolicy>
+                                                            </property>
+                                                            <property name="maximumSize">
+                                                                <size>
+                                                                    <width>79</width>
+                                                                    <height>16777215</height>
+                                                                </size>
+                                                            </property>
+                                                            <layout class="QVBoxLayout" name="verticalLayout_4">
+                                                                <property name="leftMargin">
+                                                                    <number>9</number>
+                                                                </property>
+                                                                <property name="topMargin">
+                                                                    <number>0</number>
+                                                                </property>
+                                                                <property name="rightMargin">
+                                                                    <number>9</number>
+                                                                </property>
+                                                                <property name="bottomMargin">
+                                                                    <number>9</number>
+                                                                </property>
+                                                                <item>
+                                                                    <widget class="QLabel" name="label_9">
+                                                                        <property name="text">
+                                                                            <string>录屏</string>
+                                                                        </property>
+                                                                    </widget>
+                                                                </item>
+                                                                <item>
+                                                                    <widget class="QLabel" name="label_10">
+                                                                        <property name="text">
+                                                                            <string>合成音频</string>
+                                                                        </property>
+                                                                    </widget>
+                                                                </item>
+                                                                <item>
+                                                                    <widget class="QToolButton" name="toolButton_4">
+                                                                        <property name="minimumSize">
+                                                                            <size>
+                                                                                <width>71</width>
+                                                                                <height>0</height>
+                                                                            </size>
+                                                                        </property>
+                                                                        <property name="text">
+                                                                            <string>录屏一下</string>
+                                                                        </property>
+                                                                    </widget>
+                                                                </item>
+                                                            </layout>
+                                                        </widget>
+                                                    </item>
+                                                </layout>
+                                            </widget>
+                                        </item>
+                                    </layout>
+                                </widget>
+                            </item>
+                            <item>
+                                <widget class="QFrame" name="frame_2">
+                                    <property name="frameShape">
+                                        <enum>QFrame::Panel</enum>
+                                    </property>
+                                    <property name="frameShadow">
+                                        <enum>QFrame::Raised</enum>
+                                    </property>
+                                    <layout class="QVBoxLayout" name="verticalLayout_6">
+                                        <property name="leftMargin">
+                                            <number>0</number>
+                                        </property>
+                                        <property name="topMargin">
+                                            <number>0</number>
+                                        </property>
+                                        <property name="rightMargin">
+                                            <number>0</number>
+                                        </property>
+                                        <property name="bottomMargin">
+                                            <number>0</number>
+                                        </property>
+                                        <item>
+                                            <widget class="QLabel" name="label_11">
+                                                <property name="sizePolicy">
+                                                    <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+                                                        <horstretch>0</horstretch>
+                                                        <verstretch>0</verstretch>
+                                                    </sizepolicy>
+                                                </property>
+                                                <property name="minimumSize">
+                                                    <size>
+                                                        <width>200</width>
+                                                        <height>100</height>
+                                                    </size>
+                                                </property>
+                                                <property name="maximumSize">
+                                                    <size>
+                                                        <width>16777215</width>
+                                                        <height>169</height>
+                                                    </size>
+                                                </property>
+                                                <property name="text">
+                                                    <string/>
+                                                </property>
+                                                <property name="pixmap">
+                                                    <pixmap>../../1.jpg</pixmap>
+                                                </property>
+                                                <property name="scaledContents">
+                                                    <bool>true</bool>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item>
+                                            <widget class="QWidget" name="widget_11" native="true">
+                                                <property name="sizePolicy">
+                                                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                                        <horstretch>0</horstretch>
+                                                        <verstretch>0</verstretch>
+                                                    </sizepolicy>
+                                                </property>
+                                                <layout class="QHBoxLayout" name="horizontalLayout_6">
+                                                    <property name="topMargin">
+                                                        <number>0</number>
+                                                    </property>
+                                                    <item>
+                                                        <widget class="QLabel" name="label_5">
+                                                            <property name="text">
+                                                                <string>长视频分解成短视频</string>
+                                                            </property>
+                                                        </widget>
+                                                    </item>
+                                                    <item>
+                                                        <widget class="QToolButton" name="toolButton_2">
+                                                            <property name="text">
+                                                                <string>视频分割</string>
+                                                            </property>
+                                                        </widget>
+                                                    </item>
+                                                </layout>
+                                            </widget>
+                                        </item>
+                                    </layout>
+                                </widget>
+                            </item>
+                            <item>
+                                <widget class="QFrame" name="frame_6">
+                                    <property name="frameShape">
+                                        <enum>QFrame::Panel</enum>
+                                    </property>
+                                    <property name="frameShadow">
+                                        <enum>QFrame::Raised</enum>
+                                    </property>
+                                    <layout class="QVBoxLayout" name="verticalLayout_7">
+                                        <property name="leftMargin">
+                                            <number>0</number>
+                                        </property>
+                                        <property name="topMargin">
+                                            <number>0</number>
+                                        </property>
+                                        <property name="rightMargin">
+                                            <number>0</number>
+                                        </property>
+                                        <property name="bottomMargin">
+                                            <number>0</number>
+                                        </property>
+                                        <item>
+                                            <widget class="QLabel" name="label_8">
+                                                <property name="sizePolicy">
+                                                    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                                                        <horstretch>0</horstretch>
+                                                        <verstretch>0</verstretch>
+                                                    </sizepolicy>
+                                                </property>
+                                                <property name="minimumSize">
+                                                    <size>
+                                                        <width>200</width>
+                                                        <height>100</height>
+                                                    </size>
+                                                </property>
+                                                <property name="maximumSize">
+                                                    <size>
+                                                        <width>16777215</width>
+                                                        <height>16777215</height>
+                                                    </size>
+                                                </property>
+                                                <property name="text">
+                                                    <string/>
+                                                </property>
+                                                <property name="pixmap">
+                                                    <pixmap>../../30.jpg</pixmap>
+                                                </property>
+                                                <property name="scaledContents">
+                                                    <bool>true</bool>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item>
+                                            <widget class="QWidget" name="widget_13" native="true">
+                                                <property name="sizePolicy">
+                                                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                                        <horstretch>0</horstretch>
+                                                        <verstretch>0</verstretch>
+                                                    </sizepolicy>
+                                                </property>
+                                                <layout class="QHBoxLayout" name="horizontalLayout_7">
+                                                    <property name="leftMargin">
+                                                        <number>5</number>
+                                                    </property>
+                                                    <property name="topMargin">
+                                                        <number>0</number>
+                                                    </property>
+                                                    <property name="rightMargin">
+                                                        <number>5</number>
+                                                    </property>
+                                                    <item>
+                                                        <widget class="QLabel" name="label_15">
+                                                            <property name="text">
+                                                                <string>为视频、文件生成字幕。</string>
+                                                            </property>
+                                                        </widget>
+                                                    </item>
+                                                    <item>
+                                                        <widget class="QToolButton" name="toolButton_6">
+                                                            <property name="text">
+                                                                <string>字幕生成</string>
+                                                            </property>
+                                                        </widget>
+                                                    </item>
+                                                </layout>
+                                            </widget>
+                                        </item>
+                                    </layout>
+                                </widget>
+                            </item>
+                        </layout>
+                    </widget>
+                </item>
             </layout>
-           </widget>
-          </item>
-         </layout>
         </widget>
-       </item>
-       <item>
-        <widget class="QWidget" name="widget_2" native="true">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
-          <item>
-           <widget class="QFrame" name="frame_3">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
+        <widget class="QMenuBar" name="menubar">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>890</width>
+                    <height>26</height>
+                </rect>
             </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Panel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_5">
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="label_6">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="pixmap">
-                <pixmap>../../Desktop/2.jpg</pixmap>
-               </property>
-               <property name="scaledContents">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QWidget" name="widget_7" native="true">
-               <layout class="QHBoxLayout" name="horizontalLayout_5">
-                <item>
-                 <widget class="QLabel" name="label_7">
-                  <property name="text">
-                   <string>输入起点和终点，剪辑。</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QToolButton" name="toolButton_3">
-                  <property name="text">
-                   <string>视频剪辑</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item>
-           <widget class="QFrame" name="frame_7">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Panel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_6">
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="label_16">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="pixmap">
-                <pixmap>../../Desktop/9.jpg</pixmap>
-               </property>
-               <property name="scaledContents">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QWidget" name="widget_8" native="true">
-               <layout class="QHBoxLayout" name="horizontalLayout_6">
-                <item>
-                 <widget class="QLabel" name="label_17">
-                  <property name="text">
-                   <string>视频、音频格式转换。</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QToolButton" name="toolButton_7">
-                  <property name="text">
-                   <string>格式转换</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-         </layout>
         </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item>
-     <widget class="QWidget" name="widget_6" native="true">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
-       <item>
-        <widget class="QWidget" name="widget" native="true">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>200</width>
-           <height>200</height>
-          </size>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout">
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QFrame" name="frame_4">
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Panel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_7">
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="label_8">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="pixmap">
-                <pixmap>../../Desktop/0.jpg</pixmap>
-               </property>
-               <property name="scaledContents">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QWidget" name="widget_9" native="true">
-               <layout class="QVBoxLayout" name="verticalLayout_7">
-                <item>
-                 <widget class="QLabel" name="label_9">
-                  <property name="text">
-                   <string>录屏</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="label_10">
-                  <property name="text">
-                   <string>合成音频</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QToolButton" name="toolButton_4">
-                  <property name="text">
-                   <string>录屏一下</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item>
-           <widget class="QFrame" name="frame_5">
-            <property name="frameShape">
-             <enum>QFrame::Panel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_8">
-             <property name="spacing">
-              <number>0</number>
-             </property>
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="label_11">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="pixmap">
-                <pixmap>../../Desktop/5.jpg</pixmap>
-               </property>
-               <property name="scaledContents">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QWidget" name="widget_10" native="true">
-               <layout class="QVBoxLayout" name="verticalLayout_8">
-                <item>
-                 <widget class="QLabel" name="label_13">
-                  <property name="text">
-                   <string>一个按钮</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="label_12">
-                  <property name="text">
-                   <string>图片格式化</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QToolButton" name="toolButton_5">
-                  <property name="text">
-                   <string>一键改变</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QFrame" name="frame_2">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::Panel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_9">
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QLabel" name="label_4">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>../../Desktop/1.jpg</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QWidget" name="widget_11" native="true">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_9">
-             <item>
-              <widget class="QLabel" name="label_5">
-               <property name="text">
-                <string>长视频分解成短视频</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QToolButton" name="toolButton_2">
-               <property name="text">
-                <string>视频分割</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QFrame" name="frame_6">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::Panel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_10">
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QLabel" name="label_14">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>../../Desktop/30.jpg</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QWidget" name="widget_12" native="true">
-            <layout class="QHBoxLayout" name="horizontalLayout_10">
-             <item>
-              <widget class="QLabel" name="label_15">
-               <property name="text">
-                <string>为视频、文件生成字幕。</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QToolButton" name="toolButton_6">
-               <property name="text">
-                <string>字幕生成</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>2380</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
- </widget>
- <resources/>
- <connections/>
+        <widget class="QStatusBar" name="statusbar"/>
+    </widget>
+    <resources/>
+    <connections/>
 </ui>

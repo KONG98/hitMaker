@@ -1,4 +1,3 @@
-
 from vedioReal import Ui_vedio
 from changeUIreal import Ui_changeReal
 from zimuReal import Ui_zimuReal
@@ -8,18 +7,18 @@ from vlogMakeReal import Ui_vlogmake
 from MainWindow import Ui_MainWindow
 from PyQt5.QtWidgets import QMainWindow
 
+
 class Ui_MainWindow(Ui_MainWindow, QMainWindow):
     def __init__(self):
         super(Ui_MainWindow, self).__init__()
-        self.setupUi(self)
 
-        self.toolButton_7.clicked.connect(self.zimuUI)  # 格式转换
+        self.setupUi(self)
+        self.toolButton_7.clicked.connect(self.changeUI)  # 格式转换
         self.toolButton_4.clicked.connect(self.vedioUI)
         self.toolButton_6.clicked.connect(self.zimuUI)
         self.toolButton_3.clicked.connect(self.jianjiUI)
         self.toolButton.clicked.connect(self.vlogmakeUI)
         self.toolButton_2.clicked.connect(self.seprateUI)  # s视频分割
-
         qssStyle = '''
         MainWindow{background-color: rgb(232, 241, 252)}
         QWidget{
@@ -48,7 +47,6 @@ class Ui_MainWindow(Ui_MainWindow, QMainWindow):
         self.centralwidget.setStyleSheet(qssStyle)
         self.setStyleSheet(qssStyle)
 
-
     def changeUI(self):
         self.mainWindow.hide()
         myDialog = Ui_changeReal()  # 创建对话框
@@ -70,7 +68,7 @@ class Ui_MainWindow(Ui_MainWindow, QMainWindow):
         myDialog.exec_()
         self.mainWindow.show()
 
-    def jianjiUI(self ):
+    def jianjiUI(self):
         self.mainWindow.hide()
         myDialog = Ui_jianjiDReal()  # 创建对话框
         myDialog.show()
@@ -90,4 +88,3 @@ class Ui_MainWindow(Ui_MainWindow, QMainWindow):
         myDialog.show()
         myDialog.exec_()
         self.mainWindow.show()
-
