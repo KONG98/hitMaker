@@ -12,7 +12,8 @@ from PyQt5.QtMultimedia import *
 from PyQt5 import QtCore
 from zimu import Ui_zimu
 from recognizer import getSRT_PRE, getSRT_AFTER
-
+from PyQt5.QtCore import *
+from PyQt5.QtGui import  QIcon
 global play
 play = 1
 filedic = {}
@@ -26,6 +27,8 @@ class Ui_zimuReal(Ui_zimu, QDialog):
     def __init__(self):
         super(Ui_zimu, self).__init__()
         self.setupUi(self)
+        self.setWindowTitle('hitMaker')
+        self.setWindowIcon(QIcon("picture/camera.png"))
         self.player = QMediaPlayer()
         self.player.setVideoOutput(self.wgt_video_2)  # 视频播放输出的widget，就是上面定义的
         self.add.clicked.connect(self.openVideoFile)  # 打开视频文件按钮
@@ -38,7 +41,6 @@ class Ui_zimuReal(Ui_zimu, QDialog):
         icon.addPixmap(QtGui.QPixmap("picture/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.play.setIcon(icon)
         qssStyle = '''
-
                 QWidget{
                         border: none;
                         background: rgb(232, 241, 252);
@@ -96,6 +98,11 @@ class Ui_zimuReal(Ui_zimu, QDialog):
         self.widgetcentral_cen.setStyleSheet(qssStyle)
         self.wgt_video_2.setStyleSheet(qssStyle)
 
+    def keyPressEvent(self, event):
+        if (event.key() == Qt.Key_Space):
+            self.playVideo()
+
+
     def openVideoFile(self):
         filepath = QFileDialog.getOpenFileName()[0]
         filename = filepath.split('/')[-1:][0]
@@ -113,6 +120,7 @@ class Ui_zimuReal(Ui_zimu, QDialog):
         self.player.setMedia(QMediaContent(filedic[currentVideoName]))
         self.player.play()
         self.player.pause()
+        self.setFocus()
 
     def zimucreat(self):
 

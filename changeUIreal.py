@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import *
 from PyQt5 import QtCore
 from changeUI import Ui_change
-
+from PyQt5.QtGui import  QIcon
 filedic = {}
 
 
@@ -9,6 +9,8 @@ class Ui_changeReal(Ui_change, QDialog):
     def __init__(self):
         super(Ui_change, self).__init__()
         self.setupUi(self)
+        self.setWindowTitle('hitMaker')
+        self.setWindowIcon(QIcon("picture/camera.png"))
         self.comboBox_2.addItems([".mp4", ".mp3", ".avi", ".mov"])
         self.add.clicked.connect(self.openVideoFile)
         qssStyle = '''

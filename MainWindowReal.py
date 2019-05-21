@@ -6,13 +6,15 @@ from seprateReal import Ui_seg
 from vlogMakeReal import Ui_vlogmake
 from MainWindow import Ui_MainWindow
 from PyQt5.QtWidgets import QMainWindow
+from PyQt5.QtGui import  QIcon
 
 
 class Ui_MainWindow(Ui_MainWindow, QMainWindow):
     def __init__(self):
         super(Ui_MainWindow, self).__init__()
-
         self.setupUi(self)
+        self.setWindowTitle('hitMaker')
+        self.setWindowIcon(QIcon("picture/camera.png"))
         self.toolButton_7.clicked.connect(self.changeUI)  # 格式转换
         self.toolButton_4.clicked.connect(self.vedioUI)
         self.toolButton_6.clicked.connect(self.zimuUI)

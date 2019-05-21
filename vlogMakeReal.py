@@ -6,24 +6,26 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt5 import QtWidgets
+from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtMultimedia import *
 from PyQt5 import QtCore, QtGui
 from vlogMake import Ui_vlogmake
-
+from PyQt5.QtGui import  QIcon
 global play
 global workStationPath
 workStationPath = './'
 play = 1
 filedic = {}
-from tikTokMaker import static_ImgSeq, static_tkHit_Speed
+#from tikTokMaker import static_ImgSeq, static_tkHit_Speed
 
 
 class Ui_vlogmake(Ui_vlogmake, QDialog):
     def __init__(self):
         super(Ui_vlogmake, self).__init__()
         self.setupUi(self)
+        self.setWindowTitle('hitMaker')
+        self.setWindowIcon(QIcon("picture/camera.png"))
         self.player = QMediaPlayer()
         self.player.setVideoOutput(self.wgt_video_2)  # 视频播放输出的widget，就是上面定义的
         self.add.clicked.connect(self.openVideoFile)  # 打开视频文件按钮
@@ -96,6 +98,9 @@ class Ui_vlogmake(Ui_vlogmake, QDialog):
         global workStationPath
         workStationPath = QFileDialog.getExistingDirectory()
 
+    def keyPressEvent(self, event):
+        if (event.key() == Qt.Key_Space):
+            self.playVideo()
 
     def makeVlog(self):
         model = self.comboBox.currentText()
@@ -153,3 +158,4 @@ class Ui_vlogmake(Ui_vlogmake, QDialog):
         self.player.setMedia(QMediaContent(filedic[item.text()]))
         self.player.play()
         self.player.pause()
+        self.setFocus()

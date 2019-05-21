@@ -1,6 +1,8 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtMultimedia import *
 from PyQt5 import QtCore, QtGui
+from PyQt5.QtGui import  QIcon
+from PyQt5.QtCore import *
 from jianjiUID import Ui_jianjiD
 
 global play
@@ -12,6 +14,8 @@ class Ui_jianjiDReal(Ui_jianjiD, QDialog):
     def __init__(self):
         super(Ui_jianjiD, self).__init__()
         self.setupUi(self)
+        self.setWindowTitle('hitMaker')
+        self.setWindowIcon(QIcon("picture/camera.png"))
         self.player = QMediaPlayer()
         self.player.setVideoOutput(self.wgt_video_2)  # 视频播放输出的widget，就是上面定义的
         self.add_3.clicked.connect(self.openVideoFile)  # 打开视频文件按钮
@@ -69,6 +73,10 @@ class Ui_jianjiDReal(Ui_jianjiD, QDialog):
         self.widgetcentral_cen.setStyleSheet(qssStyle)
         self.wgt_video_2.setStyleSheet(qssStyle)
 
+    def keyPressEvent(self, event):
+        if (event.key() == Qt.Key_Space):
+            self.playVideo()
+
     def openVideoFile(self):
         filepath = QFileDialog.getOpenFileName()[0]
         filename = filepath.split('/')[-1:][0]
@@ -83,6 +91,7 @@ class Ui_jianjiDReal(Ui_jianjiD, QDialog):
         self.player.setMedia(QMediaContent(filedic[item.text()]))
         self.player.play()
         self.player.pause()
+        self.setFocus()
 
     def playVideo(self):  # 1开始播放，2停止播放
         global play

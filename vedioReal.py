@@ -1,11 +1,13 @@
 from PyQt5.QtWidgets import *
 from vedio import Ui_vedio
-
+from PyQt5.QtGui import  QIcon
 
 class Ui_vedio(Ui_vedio, QDialog):
     def __init__(self):
         super(Ui_vedio, self).__init__()
         self.setupUi(self)
+        self.setWindowTitle('hitMaker')
+        self.setWindowIcon(QIcon("picture/camera.png"))
         qssStyle = '''
         QWidget{
               border: 1px solid rgb(111, 156, 207);
