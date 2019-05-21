@@ -85,10 +85,6 @@ class Ui_vlogmake(Ui_vlogmake,QDialog):
         self.widget_left.setStyleSheet(qssStyle)
         self.widget.setStyleSheet(qssStyle)
        # self.setWindowFlag(QtCore.Qt.FramelessWindowHint)  # 隐藏边框
-
-
-
-
         self.widgetcentral_cen.setStyleSheet(qssStyle)
         self.wgt_video_2.setStyleSheet(qssStyle)
 
@@ -97,8 +93,23 @@ class Ui_vlogmake(Ui_vlogmake,QDialog):
         workStationPath = QFileDialog.getExistingDirectory()
     
     def makeVlog(self):
+        model = self.comboBox.currentText()
+        from cmdCaller import subprocessCaller
+        from fileHelper import removeOneFile
+        #
+        if model == 'model1':
+            # static_ImgSeq.run(workStation=workStationPath,outputVideoName='out.mp4')
 
-        
+            outputFinalName = 'out.avi'
+            # #转码
+            # subprocessCaller('ffmpeg -i %s %s'%( str(workStationPath)+'/out.mp4' , str(workStationPath)+'/'+outputFinalName))
+            # removeOneFile(str(workStationPath)+'/out.mp4')
+            self.listWidget.addItem(outputFinalName)
+            url = QtCore.QUrl(str(workStationPath)+'/'+outputFinalName)
+            global filedic
+            filedic[outputFinalName]=url
+
+  
 
     def openVideoFile(self):
         filepath = QFileDialog.getOpenFileNames()[0]
@@ -121,12 +132,12 @@ class Ui_vlogmake(Ui_vlogmake,QDialog):
             self.player.play()
             play = 2
             icon = QtGui.QIcon()
-            icon.addPixmap(QtGui.QPixmap("../../Desktop/stop.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            icon.addPixmap(QtGui.QPixmap("picture/stop.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
             self.play.setIcon(icon)
         elif play == 2:
             self.player.pause()
             icon = QtGui.QIcon()
-            icon.addPixmap(QtGui.QPixmap("../../Desktop/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            icon.addPixmap(QtGui.QPixmap("picture/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
             self.play.setIcon(icon)
             play = 1
 

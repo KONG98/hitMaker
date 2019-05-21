@@ -24,8 +24,8 @@ def moveFile(srcfile, dstfile):
 
 
 # 读取目标文件夹的所有文件的文件名
-def get_imgFile():
-    for root, dirs, files in os.walk('img'):
+def get_imgFile(imgFolder):
+    for root, dirs, files in os.walk(imgFolder):
         img = [(str(root) + "/" + str(i)) for i in files]
         return img
 
@@ -40,6 +40,11 @@ def renameFile(folderName):
             dst = '%d.%s' % (index, namec)
             index += 1
             os.rename((str(root) + "/" + str(i)), (str(root) + "/" + str(dst)))
+
+#删除指定文件
+def removeOneFile(fileName):
+        os.remove(fileName)
+
 
 # 删除目标下的所有文件
 def removeAllFile(folderName):

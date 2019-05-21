@@ -71,23 +71,25 @@ class tkHit_Speed(tkMaker):
             self.clip = self.clip.subclip(0, length)
 
         self.clip = self.clip.set_audio(sound)
+        self.clip.fps = 30
         self.writeClip(outputVideoName)
 
 
 class tkHit_ImgSeq(tkMaker):
-    imgs = get_imgFile()
+    
     durations = []
 
     def __init__(self, clipName, durations):
         super(tkHit_ImgSeq, self).__init__( clipName)
         self.durations = durations
 
-    def run(self,outputVideoName):
+    def run(self,workStation,outputVideoName):
         length = 0
         BgmName='BGM/model1-BGM.wav'
+        imgs = get_imgFile(str(workStation)+'/imgs')
         # 截取使img和durations同等长度
-        if len(BgmName) != len(self.durations):
-            length = min(len(BgmName), len(self.durations))
+        if len(imgs) != len(self.durations):
+            length = min(len(imgs), len(self.durations))
             self.durations = self.durations[0:length]
             imgs = imgs[0:length]
 
@@ -103,7 +105,8 @@ class tkHit_ImgSeq(tkMaker):
             self.clip = self.clip.subclip(0, length)
 
         self.clip = self.clip.set_audio(sound)
-        self.writeClip(outputVideoName)
+        self.clip.fps = 30
+        self.writeClip(str(workStation)+'/'+outputVideoName)
 
 
 from tikTokMaker import *
