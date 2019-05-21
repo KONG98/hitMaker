@@ -34,10 +34,13 @@ class Ui_zimuReal(Ui_zimu, QDialog):
         self.player.positionChanged.connect(self.changeSlide)  # change Slide
         self.listWidget.itemClicked.connect(self.clickPlayVideo)
         self.save.clicked.connect(self.saveSRT)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("picture/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.play.setIcon(icon)
         qssStyle = '''
 
                 QWidget{
-                        border: 1px solid rgb(111, 156, 207);
+                        border: none;
                         background: rgb(232, 241, 252);
                 }
                 QProgressBar{

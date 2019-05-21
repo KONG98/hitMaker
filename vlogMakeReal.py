@@ -28,6 +28,10 @@ class Ui_vlogmake(Ui_vlogmake,QDialog):
         self.add2.clicked.connect(self.openWorkStation)
         self.play.clicked.connect(self.playVideo)  # play
         self.start.clicked.connect(self.makeVlog)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("picture/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.play.setIcon(icon)
+
 
         self.player.positionChanged.connect(self.changeSlide)  # change Slide
         self.listWidget.itemClicked.connect(self.clickPlayVideo)
@@ -121,12 +125,12 @@ class Ui_vlogmake(Ui_vlogmake,QDialog):
             self.player.play()
             play = 2
             icon = QtGui.QIcon()
-            icon.addPixmap(QtGui.QPixmap("../../Desktop/stop.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            icon.addPixmap(QtGui.QPixmap("picture/stop.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
             self.play.setIcon(icon)
         elif play == 2:
             self.player.pause()
             icon = QtGui.QIcon()
-            icon.addPixmap(QtGui.QPixmap("../../Desktop/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            icon.addPixmap(QtGui.QPixmap("picture/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
             self.play.setIcon(icon)
             play = 1
 

@@ -15,6 +15,9 @@ class Ui_jianjiDReal(Ui_jianjiD,QDialog):
         self.add_3.clicked.connect(self.openVideoFile)  # 打开视频文件按钮
         self.listWidget_3.itemClicked.connect(self.clickPlayVideo) #点击某个素材
         self.play_3.clicked.connect(self.playVideo)  # play
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("picture/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.play_3.setIcon(icon)
         qssStyle = '''
 
                QWidget{
@@ -86,12 +89,12 @@ class Ui_jianjiDReal(Ui_jianjiD,QDialog):
             self.player.play()
             play = 2
             icon = QtGui.QIcon()
-            icon.addPixmap(QtGui.QPixmap("../../Desktop/stop.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            icon.addPixmap(QtGui.QPixmap("picture/stop.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
             self.play_3.setIcon(icon)
         elif play == 2:
             self.player.pause()
             icon = QtGui.QIcon()
-            icon.addPixmap(QtGui.QPixmap("../../Desktop/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            icon.addPixmap(QtGui.QPixmap("picture/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
             self.play_3.setIcon(icon)
             play = 1
 
