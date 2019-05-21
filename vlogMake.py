@@ -1,17 +1,18 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'vlogMake.ui'
+# Form implementation generated from reading ui file 'c:\Users\HP\Desktop\code\hitMaker-new\hitMaker\vlogMake.ui'
 #
-# Created by: PyQt5 UI code generator 5.11.3
+# Created by: PyQt5 UI code generator 5.12.2
 #
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
 class Ui_vlogmake(object):
     def setupUi(self, vlogmake):
         vlogmake.setObjectName("vlogmake")
-        vlogmake.resize(800, 748)
+        vlogmake.resize(800, 727)
         self.horizontalLayout = QtWidgets.QHBoxLayout(vlogmake)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setSpacing(0)
@@ -34,6 +35,9 @@ class Ui_vlogmake(object):
         self.add = QtWidgets.QPushButton(self.widget_left)
         self.add.setObjectName("add")
         self.verticalLayout.addWidget(self.add)
+        self.add2 = QtWidgets.QPushButton(self.widget_left)
+        self.add2.setObjectName("add2")
+        self.verticalLayout.addWidget(self.add2)
         self.horizontalLayout.addWidget(self.widget_left)
         self.widget = QtWidgets.QWidget(vlogmake)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
@@ -139,15 +143,17 @@ class Ui_vlogmake(object):
         _translate = QtCore.QCoreApplication.translate
         vlogmake.setWindowTitle(_translate("vlogmake", "Dialog"))
         self.add.setText(_translate("vlogmake", "添加文件"))
+        self.add2.setText(_translate("vlogmake", "指定工作文件夹"))
         self.play.setText(_translate("vlogmake", "..."))
         self.lab_video.setText(_translate("vlogmake", "0%"))
         self.model.setText(_translate("vlogmake", "model"))
-        self.start.setText(_translate("vlogmake", "确认"))
+        self.start.setText(_translate("vlogmake", "生成"))
         self.textBrowser.setHtml(_translate("vlogmake", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Log:</p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+
 
 from myVideoWidget import myVideoWidget

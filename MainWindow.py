@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(120, 20, 860, 90))
-        font = QtGui.QFont()
+        font = QtGui.QFont()    
         font.setFamily("华文细黑")
         font.setPointSize(22)
         self.label.setFont(font)

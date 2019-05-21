@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>748</height>
+    <height>727</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -69,6 +69,13 @@
        <widget class="QPushButton" name="add">
         <property name="text">
          <string>添加文件</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="add2">
+        <property name="text">
+         <string>指定工作文件夹</string>
         </property>
        </widget>
       </item>
@@ -244,7 +251,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>确认</string>
+            <string>生成</string>
            </property>
           </widget>
          </item>

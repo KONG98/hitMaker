@@ -12,8 +12,12 @@ from PyQt5.QtMultimedia import *
 from PyQt5 import QtCore,QtGui
 from vlogMake import Ui_vlogmake
 global play
+global workStationPath
+workStationPath='./'
 play=1
 filedic={}
+from tikTokMaker import static_ImgSeq,static_tkHit_Speed
+
 class Ui_vlogmake(Ui_vlogmake,QDialog):
     def __init__(self):
         super(Ui_vlogmake, self).__init__()
@@ -21,7 +25,10 @@ class Ui_vlogmake(Ui_vlogmake,QDialog):
         self.player = QMediaPlayer()
         self.player.setVideoOutput(self.wgt_video_2)  # 视频播放输出的widget，就是上面定义的
         self.add.clicked.connect(self.openVideoFile)  # 打开视频文件按钮
+        self.add2.clicked.connect(self.openWorkStation)
         self.play.clicked.connect(self.playVideo)  # play
+        self.start.clicked.connect(self.makeVlog)
+
         self.player.positionChanged.connect(self.changeSlide)  # change Slide
         self.listWidget.itemClicked.connect(self.clickPlayVideo)
         self.comboBox.addItems(["model1","model2"])
@@ -85,7 +92,13 @@ class Ui_vlogmake(Ui_vlogmake,QDialog):
         self.widgetcentral_cen.setStyleSheet(qssStyle)
         self.wgt_video_2.setStyleSheet(qssStyle)
 
+    def openWorkStation(self):
+        global workStationPath
+        workStationPath = QFileDialog.getExistingDirectory()
+    
+    def makeVlog(self):
 
+        
 
     def openVideoFile(self):
         filepath = QFileDialog.getOpenFileNames()[0]
