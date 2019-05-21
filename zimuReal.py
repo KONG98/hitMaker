@@ -84,8 +84,7 @@ class Ui_zimuReal(Ui_zimu, QDialog):
                     background:rgb(255,255,255);
                     }
                                 '''
-        
-		self.widget_left.setStyleSheet(qssStyle)
+        self.widget_left.setStyleSheet(qssStyle)
         self.widget.setStyleSheet(qssStyle)
         self.widget_2.setStyleSheet(qssStyle)
         self.widget_3.setStyleSheet(qssStyle)
