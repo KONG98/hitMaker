@@ -1,19 +1,21 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtMultimedia import *
-from PyQt5 import QtCore,QtGui
+from PyQt5 import QtCore, QtGui
 from jianjiUID import Ui_jianjiD
 
 global play
-play=1
-filedic={}
-class Ui_jianjiDReal(Ui_jianjiD,QDialog):
+play = 1
+filedic = {}
+
+
+class Ui_jianjiDReal(Ui_jianjiD, QDialog):
     def __init__(self):
-        super(Ui_jianjiD,self).__init__()
+        super(Ui_jianjiD, self).__init__()
         self.setupUi(self)
         self.player = QMediaPlayer()
         self.player.setVideoOutput(self.wgt_video_2)  # 视频播放输出的widget，就是上面定义的
         self.add_3.clicked.connect(self.openVideoFile)  # 打开视频文件按钮
-        self.listWidget_3.itemClicked.connect(self.clickPlayVideo) #点击某个素材
+        self.listWidget_3.itemClicked.connect(self.clickPlayVideo)  # 点击某个素材
         self.play_3.clicked.connect(self.playVideo)  # play
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("picture/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -74,7 +76,6 @@ class Ui_jianjiDReal(Ui_jianjiD,QDialog):
         self.listWidget_3.addItem(filename)
         self.textBrowser_3.append("添加成功")
 
-
         global filedic
         filedic[filename] = url
 
@@ -97,4 +98,3 @@ class Ui_jianjiDReal(Ui_jianjiD,QDialog):
             icon.addPixmap(QtGui.QPixmap("picture/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
             self.play_3.setIcon(icon)
             play = 1
-

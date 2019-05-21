@@ -115,7 +115,7 @@ class Ui_zimuReal(Ui_zimu, QDialog):
         self.player.pause()
 
     def zimucreat(self):
-        
+
         try:
             if currentVideoName:
                 videoName = videoNameDic[currentVideoName]
@@ -124,13 +124,12 @@ class Ui_zimuReal(Ui_zimu, QDialog):
                 Index = list(range(len(SRT_pipeline.TimeStampList)))
                 count = 0
                 for i in Index:
-                    print(i,'开始')
-                    if((i+1)%3==0):
+                    print(i, '开始')
+                    if ((i + 1) % 3 == 0):
                         self.textEdit.append(str(SRT_pipeline.Lesson_content[count]))
-                        count+=1
+                        count += 1
                     self.textEdit.append(SRT_pipeline.TimeStampList[i])
-                
-                
+
                 from fileHelper import removeAllFile
                 removeAllFile('chunks')
                 removeAllFile('tmp')
@@ -145,7 +144,6 @@ class Ui_zimuReal(Ui_zimu, QDialog):
             handle.write(content)
 
         print('生成字幕subtitle.srt成功')
-        
 
     def playVideo(self):  # 1开始播放，2停止播放
         global play

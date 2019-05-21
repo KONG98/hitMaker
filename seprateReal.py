@@ -2,10 +2,12 @@ from PyQt5.QtWidgets import *
 from PyQt5 import QtCore
 from seprateUI import Ui_seg
 
-filedic={}
-class Ui_seg(Ui_seg,QDialog):
+filedic = {}
+
+
+class Ui_seg(Ui_seg, QDialog):
     def __init__(self):
-        super(Ui_seg,self).__init__()
+        super(Ui_seg, self).__init__()
         self.setupUi(self)
         self.add.clicked.connect(self.openVideoFile)
         qssStyle = '''

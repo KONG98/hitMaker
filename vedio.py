@@ -8,6 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
 class Ui_vedio(object):
     def setupUi(self, vedio):
         vedio.setObjectName("vedio")
@@ -47,4 +48,3 @@ class Ui_vedio(object):
         vedio.setWindowTitle(_translate("vedio", "Dialog"))
         self.pushButton.setText(_translate("vedio", "开始录屏"))
         self.pushButton_2.setText(_translate("vedio", "结束录屏"))
-
