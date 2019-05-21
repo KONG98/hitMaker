@@ -39,13 +39,10 @@ def renameFile(folderName):
             index += 1
             os.rename((str(root) + "/" + str(i)), (str(root) + "/" + str(dst)))
 
-<<<<<<< HEAD
 #删除指定文件
 def removeOneFile(fileName):
         os.remove(fileName)
 
-=======
->>>>>>> b09cc60b28ec64dd28311fb8c9c37f5f2ca5a88d
 
 # 删除目标下的所有文件
 def removeAllFile(folderName):

@@ -82,16 +82,10 @@ class tkHit_ImgSeq(tkMaker):
         super(tkHit_ImgSeq, self).__init__(clipName)
         self.durations = durations
 
-<<<<<<< HEAD
     def run(self,workStation,outputVideoName):
         length = 0
         BgmName='BGM/model1-BGM.wav'
         imgs = get_imgFile(str(workStation)+'/imgs')
-=======
-    def run(self, outputVideoName):
-        length = 0
-        BgmName = 'BGM/model1-BGM.wav'
->>>>>>> b09cc60b28ec64dd28311fb8c9c37f5f2ca5a88d
         # 截取使img和durations同等长度
         if len(imgs) != len(self.durations):
             length = min(len(imgs), len(self.durations))

@@ -88,12 +88,7 @@ class Ui_vlogmake(Ui_vlogmake, QDialog):
 
         self.widget_left.setStyleSheet(qssStyle)
         self.widget.setStyleSheet(qssStyle)
-<<<<<<< HEAD
        # self.setWindowFlag(QtCore.Qt.FramelessWindowHint)  # 隐藏边框
-=======
-        # self.setWindowFlag(QtCore.Qt.FramelessWindowHint)  # 隐藏边框
-
->>>>>>> b09cc60b28ec64dd28311fb8c9c37f5f2ca5a88d
         self.widgetcentral_cen.setStyleSheet(qssStyle)
         self.wgt_video_2.setStyleSheet(qssStyle)
 
@@ -103,7 +98,6 @@ class Ui_vlogmake(Ui_vlogmake, QDialog):
 
 
     def makeVlog(self):
-<<<<<<< HEAD
         model = self.comboBox.currentText()
         from cmdCaller import subprocessCaller
         from fileHelper import removeOneFile
@@ -121,10 +115,6 @@ class Ui_vlogmake(Ui_vlogmake, QDialog):
             filedic[outputFinalName]=url
 
   
-=======
-        pass
-
->>>>>>> b09cc60b28ec64dd28311fb8c9c37f5f2ca5a88d
 
     def openVideoFile(self):
         filepath = QFileDialog.getOpenFileNames()[0]
