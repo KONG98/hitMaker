@@ -9,15 +9,12 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import *
 from PyQt5.QtMultimedia import *
-from PyQt5 import QtCore, QtGui
+from PyQt5 import QtCore,QtGui
 from vlogMake import Ui_vlogmake
-
 global play
-play = 1
-filedic = {}
-
-
-class Ui_vlogmake(Ui_vlogmake, QDialog):
+play=1
+filedic={}
+class Ui_vlogmake(Ui_vlogmake,QDialog):
     def __init__(self):
         super(Ui_vlogmake, self).__init__()
         self.setupUi(self)
@@ -27,11 +24,11 @@ class Ui_vlogmake(Ui_vlogmake, QDialog):
         self.play.clicked.connect(self.playVideo)  # play
         self.player.positionChanged.connect(self.changeSlide)  # change Slide
         self.listWidget.itemClicked.connect(self.clickPlayVideo)
-        self.comboBox.addItems(["model1", "model2"])
+        self.comboBox.addItems(["model1","model2"])
         qssStyle = '''
       
         QWidget{
-                border: 1px solid rgb(111, 156, 207);
+                border: none;
                 background: rgb(232, 241, 252);
         }
         QProgressBar{
@@ -71,24 +68,34 @@ class Ui_vlogmake(Ui_vlogmake, QDialog):
 
             background:rgb(255,255,255);
             }
+            QComboBox{
+             
+            background:rgb(255,255,255);
+            }
                         '''
-        # self.widget_2.setStyleSheet(qssStyle)
+
 
         self.widget_left.setStyleSheet(qssStyle)
+        self.widget.setStyleSheet(qssStyle)
+       # self.setWindowFlag(QtCore.Qt.FramelessWindowHint)  # 隐藏边框
 
-        self.widget_bottom.setStyleSheet(qssStyle)
+
+
+
         self.widgetcentral_cen.setStyleSheet(qssStyle)
         self.wgt_video_2.setStyleSheet(qssStyle)
+
+
 
     def openVideoFile(self):
         filepath = QFileDialog.getOpenFileNames()[0]
         for onefilepath in filepath:
-            filename = onefilepath.split('/')[-1:][0]
-            url = QtCore.QUrl(onefilepath)
-            print(url)
-            self.listWidget.addItem(filename)
-            global filedic
-            filedic[filename] = url
+          filename = onefilepath.split('/')[-1:][0]
+          url = QtCore.QUrl(onefilepath)
+          print(url)
+          self.listWidget.addItem(filename)
+          global filedic
+          filedic[filename] = url
 
     def changeSlide(self, position):
         self.vidoeLength = self.player.duration() + 0.1

@@ -84,11 +84,15 @@ class Ui_zimuReal(Ui_zimu, QDialog):
                     background:rgb(255,255,255);
                     }
                                 '''
-        self.widget_left.setStyleSheet(qssStyle)
-        self.widget_bottom.setStyleSheet(qssStyle)
+        
+		self.widget_left.setStyleSheet(qssStyle)
+        self.widget.setStyleSheet(qssStyle)
+        self.widget_2.setStyleSheet(qssStyle)
+        self.widget_3.setStyleSheet(qssStyle)
+        self.widget_4.setStyleSheet(qssStyle)
+
         self.widgetcentral_cen.setStyleSheet(qssStyle)
         self.wgt_video_2.setStyleSheet(qssStyle)
-        self.widget_right.setStyleSheet(qssStyle)
 
     def openVideoFile(self):
         filepath = QFileDialog.getOpenFileName()[0]
