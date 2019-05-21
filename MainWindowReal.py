@@ -11,15 +11,14 @@ from PyQt5.QtWidgets import QMainWindow
 class Ui_MainWindow(Ui_MainWindow, QMainWindow):
     def __init__(self):
         super(Ui_MainWindow, self).__init__()
-        self.setupUi(self)
 
-        self.toolButton_7.clicked.connect(self.zimuUI)  # 格式转换
+        self.setupUi(self)
+        self.toolButton_7.clicked.connect(self.changeUI)  # 格式转换
         self.toolButton_4.clicked.connect(self.vedioUI)
         self.toolButton_6.clicked.connect(self.zimuUI)
         self.toolButton_3.clicked.connect(self.jianjiUI)
         self.toolButton.clicked.connect(self.vlogmakeUI)
         self.toolButton_2.clicked.connect(self.seprateUI)  # s视频分割
-
         qssStyle = '''
         MainWindow{background-color: rgb(232, 241, 252)}
         QWidget{

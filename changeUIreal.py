@@ -10,7 +10,7 @@ class Ui_changeReal(Ui_change,QDialog):
         self.add.clicked.connect(self.openVideoFile)
         qssStyle = '''
                         QWidget{
-                border: 1px solid rgb(111, 156, 207);
+                border: none;
                 background: rgb(232, 241, 252);
         }
         QProgressBar{
@@ -45,7 +45,7 @@ class Ui_changeReal(Ui_change,QDialog):
         height: 25px;
         border-radius: 4px;
         border: 1px solid rgb(111, 156, 207);
-        background: rgba(255, 255, 255, 30);
+        background: rgb(255, 255, 255);
 }
 QComboBox:enabled {
         color: rgb(84, 84, 84);

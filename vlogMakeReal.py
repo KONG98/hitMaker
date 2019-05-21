@@ -100,7 +100,7 @@ class Ui_vlogmake(Ui_vlogmake,QDialog):
         global workStationPath
         workStationPath = QFileDialog.getExistingDirectory()
     
-    def makeVlog(self):
+   def makeVlog(self):
 
         
 

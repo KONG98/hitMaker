@@ -10,7 +10,7 @@ class Ui_seg(Ui_seg,QDialog):
         self.add.clicked.connect(self.openVideoFile)
         qssStyle = '''
                 QWidget{
-        border: 1px solid rgb(111, 156, 207);
+        border: none;
         background: rgb(232, 241, 252);
 }
 QProgressBar{
