@@ -13,7 +13,7 @@ from PyQt5 import QtCore
 from zimu import Ui_zimu
 from recognizer import getSRT_PRE, getSRT_AFTER
 from PyQt5.QtCore import *
-from PyQt5.QtGui import  QIcon
+
 global play
 play = 1
 filedic = {}
@@ -28,7 +28,7 @@ class Ui_zimuReal(Ui_zimu, QDialog):
         super(Ui_zimu, self).__init__()
         self.setupUi(self)
         self.setWindowTitle('hitMaker')
-        self.setWindowIcon(QIcon("picture/camera.png"))
+
         self.player = QMediaPlayer()
         self.player.setVideoOutput(self.wgt_video_2)  # 视频播放输出的widget，就是上面定义的
         self.add.clicked.connect(self.openVideoFile)  # 打开视频文件按钮
@@ -41,6 +41,7 @@ class Ui_zimuReal(Ui_zimu, QDialog):
         icon.addPixmap(QtGui.QPixmap("picture/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.play.setIcon(icon)
         qssStyle = '''
+
                 QWidget{
                         border: none;
                         background: rgb(232, 241, 252);
@@ -171,4 +172,6 @@ class Ui_zimuReal(Ui_zimu, QDialog):
     def changeSlide(self, position):
         self.vidoeLength = self.player.duration() + 0.1
         self.sld_video.setValue(round((position / self.vidoeLength) * 100))
-        self.lab_video.setText(str(round((position / self.vidoeLength) * 100, 2)) + '%')
+        time= QTime(0, position / 60000, qRound((position % 60000) / 1000.0))
+        self.lab_video.setText(time.toString())
+

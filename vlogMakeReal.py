@@ -131,11 +131,11 @@ class Ui_vlogmake(Ui_vlogmake, QDialog):
             global filedic
             filedic[filename] = url
 
-
     def changeSlide(self, position):
         self.vidoeLength = self.player.duration() + 0.1
         self.sld_video.setValue(round((position / self.vidoeLength) * 100))
-        self.lab_video.setText(str(round((position / self.vidoeLength) * 100, 2)) + '%')
+        time = QTime(0, position / 60000, qRound((position % 60000) / 1000.0))
+        self.lab_video.setText(time.toString())
 
 
     def playVideo(self):  # 1开始播放，2停止播放
