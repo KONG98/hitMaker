@@ -31,11 +31,16 @@ def subprocessCaller(cmd):
 
 
 def embedSRT(videoName, SrtName):
-    if not os.path.exists(videoName):
-        print('Error:%s does not exist' % videoName)
-        return
-
-    namef, namec = os.path.splitext(videoName)
-    outputFileName = namef + str('_with_SRT') + namec
+    
+    
+    tmp = videoName.split('/')[-1:][0]
+    workStation = videoName[0:len(videoName)-len(tmp)]
+    namef, namec = os.path.splitext(tmp)
+    outputFileName = str(workStation)  + namef + str('_with_SRT') + namec
     cmd = 'ffmpeg -i %s -vf subtitles=%s %s' % (videoName, SrtName, outputFileName)
     response = subprocess.call(cmd, shell=True)
+    return (outputFileName)
+
+if __name__ =='__main__':
+    videoName = 'C:/Users/HP/Desktop/code/hitMaker-new/hitMaker/media/video.mp4'
+    embedSRT(videoName,'subtitle.srt')

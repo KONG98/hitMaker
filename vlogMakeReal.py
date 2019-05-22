@@ -17,7 +17,7 @@ global workStationPath
 workStationPath = './'
 play = 1
 filedic = {}
-#from tikTokMaker import static_ImgSeq, static_tkHit_Speed
+from tikTokMaker import static_ImgSeq, static_tkHit_Speed
 
 
 class Ui_vlogmake(Ui_vlogmake, QDialog):
@@ -108,12 +108,12 @@ class Ui_vlogmake(Ui_vlogmake, QDialog):
         from fileHelper import removeOneFile
         #
         if model == 'model1':
-            # static_ImgSeq.run(workStation=workStationPath,outputVideoName='out.mp4')
+            static_ImgSeq.run(workStation=workStationPath,outputVideoName='out.mp4')
 
             outputFinalName = 'out.avi'
             # #转码
-            # subprocessCaller('ffmpeg -i %s %s'%( str(workStationPath)+'/out.mp4' , str(workStationPath)+'/'+outputFinalName))
-            # removeOneFile(str(workStationPath)+'/out.mp4')
+            subprocessCaller('ffmpeg -i %s %s'%( str(workStationPath)+'/out.mp4' , str(workStationPath)+'/'+outputFinalName))
+            removeOneFile(str(workStationPath)+'/out.mp4')
             self.listWidget.addItem(outputFinalName)
             url = QtCore.QUrl(str(workStationPath)+'/'+outputFinalName)
             global filedic

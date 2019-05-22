@@ -42,7 +42,7 @@ def recognizePCM(pcmName_PREFIX):
     if 'result' in respose.keys():
         return (respose['result'][0])
     else:
-        return ""
+        return " "
 
 
 def split(chunk, min_silence_len, length_limit, silence_thresh, level=0):

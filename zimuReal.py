@@ -37,6 +37,7 @@ class Ui_zimuReal(Ui_zimu, QDialog):
         self.player.positionChanged.connect(self.changeSlide)  # change Slide
         self.listWidget.itemClicked.connect(self.clickPlayVideo)
         self.save.clicked.connect(self.saveSRT)
+        self.embed.clicked.connect(self.Handle_embedSRT)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("picture/play.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.play.setIcon(icon)
@@ -130,14 +131,14 @@ class Ui_zimuReal(Ui_zimu, QDialog):
                 videoName = videoNameDic[currentVideoName]
                 SRT_pipeline = getSRT_PRE(videoName)
 
-                Index = list(range(len(SRT_pipeline.TimeStampList)))
-                count = 0
-                for i in Index:
+
+                
+                for i in range(0,int(len(SRT_pipeline.TimeStampList)/2)):
                     print(i, '开始')
-                    if ((i + 1) % 3 == 0):
-                        self.textEdit.append(str(SRT_pipeline.Lesson_content[count]))
-                        count += 1
-                    self.textEdit.append(SRT_pipeline.TimeStampList[i])
+                    self.textEdit.append(SRT_pipeline.TimeStampList[i*2])
+                    self.textEdit.append(SRT_pipeline.TimeStampList[i*2+1])
+                    self.textEdit.append(str(SRT_pipeline.Lesson_content[i]))   
+                        
 
                 from fileHelper import removeAllFile
                 removeAllFile('chunks')
@@ -153,6 +154,19 @@ class Ui_zimuReal(Ui_zimu, QDialog):
             handle.write(content)
 
         print('生成字幕subtitle.srt成功')
+
+    def Handle_embedSRT(self):
+        videoName = videoNameDic[currentVideoName]
+        from cmdCaller import embedSRT
+        outputFileName = embedSRT(videoName,'subtitle.srt')
+        print('融入成功')
+        outputFinalName  = outputFileName.split('/')[-1:][0]
+        self.listWidget.addItem(outputFinalName)
+        url = QtCore.QUrl(outputFileName)
+        global filedic
+        filedic[outputFinalName]=url
+
+
 
     def playVideo(self):  # 1开始播放，2停止播放
         global play

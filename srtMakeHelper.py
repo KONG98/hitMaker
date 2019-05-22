@@ -28,12 +28,12 @@ def TimeStampList_toHMS(TimeStampList):
     ans = []
     Index = list(range(len(TimeStampList)))
     for i in Index:
-        ans.append(str(i + 1) + "\n")
+        ans.append(str(i + 1))
         (Hour1, Minus1, Second1, MileSecond1) = GenerateHMSMSFromMileSecond(TimeStampList[i]["Begin"])
         (Hour2, Minus2, Second2, MileSecond2) = GenerateHMSMSFromMileSecond(TimeStampList[i]["End"])
-        ans.append("%02d:%02d:%02d,%03d --> %02d:%02d:%02d,%03d\n" % (
+        ans.append("%02d:%02d:%02d,%03d --> %02d:%02d:%02d,%03d" % (
             Hour1, Minus1, Second1, MileSecond1, Hour2, Minus2, Second2, MileSecond2))
-        ans.append("\n")
+        
     return ans
 
 

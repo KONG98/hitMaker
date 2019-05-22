@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'zimu.ui'
+# Form implementation generated from reading ui file 'c:\Users\HP\Desktop\code\hitMaker-new\hitMaker\zimu.ui'
 #
-# Created by: PyQt5 UI code generator 5.11.3
+# Created by: PyQt5 UI code generator 5.12.2
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -12,7 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_zimu(object):
     def setupUi(self, zimu):
         zimu.setObjectName("zimu")
-        zimu.resize(824, 671)
+        zimu.resize(920, 743)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(zimu)
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_2.setSpacing(0)
@@ -176,17 +176,17 @@ class Ui_zimu(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.textEdit.sizePolicy().hasHeightForWidth())
         self.textEdit.setSizePolicy(sizePolicy)
-        self.textEdit.setMinimumSize(QtCore.QSize(100, 300))
+        self.textEdit.setMinimumSize(QtCore.QSize(250, 300))
         self.textEdit.setMaximumSize(QtCore.QSize(150, 16777215))
         self.textEdit.setObjectName("textEdit")
         self.verticalLayout_3.addWidget(self.textEdit)
-        self.pushButton = QtWidgets.QPushButton(self.widget_3)
-        self.pushButton.setMinimumSize(QtCore.QSize(0, 30))
+        self.embed = QtWidgets.QPushButton(self.widget_3)
+        self.embed.setMinimumSize(QtCore.QSize(0, 30))
         font = QtGui.QFont()
         font.setPointSize(7)
-        self.pushButton.setFont(font)
-        self.pushButton.setObjectName("pushButton")
-        self.verticalLayout_3.addWidget(self.pushButton)
+        self.embed.setFont(font)
+        self.embed.setObjectName("embed")
+        self.verticalLayout_3.addWidget(self.embed)
         self.save = QtWidgets.QPushButton(self.widget_3)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -229,15 +229,15 @@ class Ui_zimu(object):
         self.start.setText(_translate("zimu", "开始生成"))
         self.play.setText(_translate("zimu", "..."))
         self.lab_video.setText(_translate("zimu", "0%"))
-        self.pushButton.setText(_translate("zimu", "融合"))
+        self.embed.setText(_translate("zimu", "融合"))
         self.save.setText(_translate("zimu", "保存"))
-        self.textBrowser.setHtml(_translate("zimu",
-                                            "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-                                            "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-                                            "p, li { white-space: pre-wrap; }\n"
-                                            "</style></head><body style=\" font-family:\'SimSun\'; font-size:15pt; font-weight:400; font-style:normal;\">\n"
-                                            "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">Log:</span></p>\n"
-                                            "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\"><br /></p></body></html>"))
+        self.textBrowser.setHtml(_translate("zimu", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'SimSun\'; font-size:15pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                                        </p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">Log:</span>                                        </p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                                    </p></body></html>"))
 
 
 from myVideoWidget import myVideoWidget
