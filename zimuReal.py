@@ -13,7 +13,7 @@ from PyQt5 import QtCore
 from zimu import Ui_zimu
 from recognizer import getSRT_PRE, getSRT_AFTER
 from PyQt5.QtCore import *
-
+from PyQt5.QtGui import  QIcon
 global play
 play = 1
 filedic = {}
@@ -28,7 +28,7 @@ class Ui_zimuReal(Ui_zimu, QDialog):
         super(Ui_zimu, self).__init__()
         self.setupUi(self)
         self.setWindowTitle('hitMaker')
-
+        self.setWindowIcon(QIcon("picture/camera.png"))
         self.player = QMediaPlayer()
         self.player.setVideoOutput(self.wgt_video_2)  # 视频播放输出的widget，就是上面定义的
         self.add.clicked.connect(self.openVideoFile)  # 打开视频文件按钮
